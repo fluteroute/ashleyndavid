@@ -1,4 +1,5 @@
 .App {
+  background-image: linear-gradient(to bottom right, #1B1F3A, #53354A, #A64942);
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -8,8 +9,8 @@
 }
 
 a {
-  color: #D45400;
-  font-family: monospace;
+  color: #f0690f;
+  font-family: 'Source Code Pro', 'Inconsolata', monospace;
   font-size: medium;
   font-style: normal;
   font-weight: bold;
@@ -17,12 +18,12 @@ a {
 }
 
 a:hover {
-  color: #AB4400;
+  color: #fc802d;
   font-weight: bolder;
 }
 
 a:focus {
-  color: #AB4400;
+  color: #fc802d;
   font-weight: bolder;
 }
 
@@ -36,8 +37,8 @@ a:focus {
 }
 
 .text span {
-  color: #2C2927;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: #fff;
+  font-family: 'Kdam Thmor Pro', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   font-size: 50px;
   font-style: normal;
 }
@@ -47,8 +48,8 @@ a:focus {
 }
 
 .sub-text span {
-  color: #2C2927;
-  font-family: monospace;
+  color: #fff;
+  font-family: 'Source Code Pro', 'Inconsolata', monospace;
   font-size: medium;
   font-style: normal;
   font-weight: bold;
@@ -61,7 +62,7 @@ a:focus {
   }
 
   .text span {
-    font-size: 27px;
+    font-size: 25px;
   }
 
   .sub-text {
