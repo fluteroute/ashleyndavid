@@ -1,85 +1,38 @@
 .App {
-  background-image: linear-gradient(to bottom right, #1B1F3A, #53354A, #A64942);
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  text-align: center;
-  height: 100vh;
   align-items: center;
   justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
 }
 
-a {
-  color: #f0690f;
-  font-family: 'Source Code Pro', 'Inconsolata', monospace;
-  font-size: medium;
-  font-style: normal;
-  font-weight: bold;
-  margin-top: 10px;
+.App-link {
+  color: #61dafb;
 }
 
-a:hover {
-  color: #fc802d;
-  font-weight: bolder;
-}
-
-a:focus {
-  color: #fc802d;
-  font-weight: bolder;
-}
-
-.logo {
-  margin-bottom: 10px;
-}
-
-.text {
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
-.text span {
-  color: #fff;
-  font-family: 'Kdam Thmor Pro', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  font-size: 50px;
-  font-style: normal;
-}
-
-.sub-text {
-  margin-top: 10px;
-}
-
-.sub-text span {
-  color: #fff;
-  font-family: 'Source Code Pro', 'Inconsolata', monospace;
-  font-size: medium;
-  font-style: normal;
-  font-weight: bold;
-}
-
-@media only screen and (max-width: 600px){
-  .text {
-    margin-top: 5px;
-    margin-bottom: 5px;
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
   }
-
-  .text span {
-    font-size: 25px;
-  }
-
-  .sub-text {
-    margin-top: 5px;
-  }
-
-  .sub-text span {
-    font-size: 14px;
-  }
-
-  .App-logo {
-    height: 150px;
-    width: 150px;
-  }
-
-  .construction-container {
-    margin-left: 40px;
-    margin-right: 40px;
+  to {
+    transform: rotate(360deg);
   }
 }
