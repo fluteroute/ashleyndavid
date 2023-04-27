@@ -1,9 +1,9 @@
-import { Box, CatnipProvider } from "@fluteroute/catnip-ui";
+import { Box, ThemeProvider } from "../components/base";
 import React from "react";
 
 function App() {
   return (
-    <CatnipProvider>
+    <ThemeProvider>
       <Box
         className="App"
         sx={{
@@ -16,7 +16,7 @@ function App() {
           justifyContent: "center",
         }}
       />
-    </CatnipProvider>
+    </ThemeProvider>
   );
 }
 

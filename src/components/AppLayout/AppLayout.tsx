@@ -1,5 +1,5 @@
 import React from "react";
-import { Grid } from "@fluteroute/catnip-ui";
+import { Grid } from "../base/Grid";
 
 function AppLayout() {
   return <Grid />;
