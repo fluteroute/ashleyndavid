@@ -33,7 +33,9 @@ export const Menu = React.forwardRef((props: MenuProps) => {
               color: "textPrimary",
               boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
               borderRadius: "20px",
-              padding: "12px",
+              paddingTop: "8px",
+              paddingBottom: "8px",
+              width: "100%",
             }}
           >
             {children}

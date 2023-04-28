@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Flex, Image } from "./base";
+import { Box, Flex, Image } from "../base";
 
 function HomeAvatar() {
   return (

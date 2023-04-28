@@ -1,5 +1,5 @@
 import React from "react";
-import { HomeLayout } from "../components/layouts";
+import { HomeLayout, MainLayout } from "../components/layouts";
 import { Box, ThemeProvider, Typography } from "../components/base";
 
 function App() {
