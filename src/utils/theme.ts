@@ -13,7 +13,7 @@ export const baseTheme = {
     h1: {
       fontFamily:
         "Kdam Thmor Pro, Franklin Gothic Medium, Arial Narrow, Arial,sans-serif",
-      fontSize: "50px",
+      fontSize: "44px",
       fontStyle: "normal",
       fontWeight: "600",
       lineHeight: "normal",
@@ -22,7 +22,7 @@ export const baseTheme = {
     h2: {
       fontFamily:
         "Kdam Thmor Pro, Franklin Gothic Medium, Arial Narrow, Arial,sans-serif",
-      fontSize: "40px",
+      fontSize: "38px",
       fontStyle: "normal",
       fontWeight: "600",
       lineHeight: "normal",
@@ -201,7 +201,10 @@ export const theme = {
       ...baseTheme.typography.body1,
       color: "#F5F5F5",
       backgroundColor: "backgroundSecondary",
-      padding: 46,
+      paddingTop: 46,
+      paddingBottom: 46,
+      paddingRight: [18, 18, 18, 46],
+      paddingLeft: [18, 18, 18, 46],
       borderRadius: 80,
       minHeight: 300,
       boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
@@ -267,6 +270,9 @@ export const theme = {
     },
   },
   images: {
+    default: {
+      boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
+    },
     avatar: {
       width: 48,
       height: 48,

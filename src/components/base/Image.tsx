@@ -9,7 +9,9 @@ export type ImageProps = ThemeUIImageProps;
  * Primary UI component for user interaction
  */
 export const Image = React.forwardRef<HTMLImageElement, ImageProps>(
-  (props, ref) => <ThemeUIImage ref={ref} {...props} />
+  ({ variant = "default", ...props }, ref) => (
+    <ThemeUIImage ref={ref} variant={variant} {...props} />
+  )
 );
 
 Image.displayName = "Image";

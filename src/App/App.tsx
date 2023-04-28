@@ -1,21 +1,23 @@
-import { Box, ThemeProvider } from "../components/base";
 import React from "react";
+import { HomeLayout } from "../components/layouts";
+import { Box, ThemeProvider, Typography } from "../components/base";
 
 function App() {
   return (
     <ThemeProvider>
-      <Box
-        className="App"
-        sx={{
-          backgroundImage:
-            "linear-gradient(to bottom right,#1b1f3a,#53354a,#a64942)",
-          display: "flex",
-          flexDirection: "column",
-          height: "100vh",
-          alignItems: "center",
-          justifyContent: "center",
-        }}
-      />
+      <HomeLayout title="Ashley David">
+        <Box>
+          <Typography variant="body1">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+            culpa qui officia deserunt mollit anim id est laborum.
+          </Typography>
+        </Box>
+      </HomeLayout>
     </ThemeProvider>
   );
 }
