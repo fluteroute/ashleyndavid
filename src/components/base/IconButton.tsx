@@ -45,7 +45,7 @@ export const IconButton = React.forwardRef<HTMLButtonElement, IconButtonProps>(
           borderRadius: 99999999,
           fontSize: "26px",
           height: "44px",
-          p: "20px",
+          padding: "24px",
           width: "44px",
           ...sx,
         }}

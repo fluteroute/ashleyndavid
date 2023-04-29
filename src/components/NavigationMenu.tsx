@@ -1,19 +1,20 @@
 import React from "react";
 import { Box, Button, Menu } from "./base";
+import { Link } from "react-router-dom";
 
-type NavigationMenuItemProps = { label: string; href: string };
+type NavigationMenuItemProps = { label: string; to: string };
 
 const NavigationMenuItem = React.forwardRef<
   HTMLLIElement,
   NavigationMenuItemProps
 >((props, ref) => {
-  const { label, href } = props;
+  const { label, to } = props;
   return (
     <li ref={ref}>
       <Button
-        as="a"
+        as={Link}
         //@ts-ignore
-        href={href}
+        to={to}
         variant="secondary"
         sx={{
           borderRadius: 0,
@@ -59,10 +60,10 @@ function NavigationMenu() {
           role="listbox"
           style={{ listStyleType: "none", paddingInlineStart: 0 }}
         >
-          <NavigationMenuItem label="Home" href="/home" />
-          <NavigationMenuItem label="About" href="/about" />
-          <NavigationMenuItem label="Career" href="/career" />
-          <NavigationMenuItem label="Contact" href="/contact" />
+          <NavigationMenuItem label="Home" to="/" />
+          <NavigationMenuItem label="About" to="/about" />
+          <NavigationMenuItem label="Career" to="/career" />
+          <NavigationMenuItem label="Contact" to="/contact" />
         </ul>
       </Menu>
     </Box>

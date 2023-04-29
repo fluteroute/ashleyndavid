@@ -207,9 +207,6 @@ export const theme = {
       paddingLeft: [18, 18, 18, 46],
       borderRadius: 80,
       boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
-      transitionTimingFunction: "ease-in-out",
-      transition: "width 2s",
-      width: "100%",
     },
     compact: {
       ...baseTheme.typography.body1,
