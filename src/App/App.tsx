@@ -1,7 +1,7 @@
 import React from "react";
 import { useLocation, useOutlet } from "react-router-dom";
-import { MainLayout } from "../components/layouts";
-import { ThemeProvider } from "../components/base";
+import { Layout } from "../components";
+import { Box, ThemeProvider } from "../components/base";
 
 import { routes } from "..";
 
@@ -13,11 +13,9 @@ function App() {
 
   return (
     <ThemeProvider>
-      <MainLayout>
-        <div ref={nodeRef} className="container">
-          {currentOutlet}
-        </div>
-      </MainLayout>
+      <Layout>
+        <Box ref={nodeRef}>{currentOutlet}</Box>
+      </Layout>
     </ThemeProvider>
   );
 }

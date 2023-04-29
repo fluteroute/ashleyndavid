@@ -38,13 +38,6 @@ const NavigationMenuItem = React.forwardRef<
 });
 
 function NavigationMenu() {
-  const sx = {
-    borderRadius: 0,
-    width: "100%",
-    paddingRight: "24px",
-    paddingLeft: "24px",
-  };
-
   return (
     <Box
       sx={{
