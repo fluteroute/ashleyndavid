@@ -14,7 +14,7 @@ function Avatar(props: AvatarProps) {
         marginBottom: ["-50px", "-50px", "-50px", 0],
         marginLeft: [0, 0, 0, "-110px"],
         position: "relative",
-        transition: "all 1s linear",
+        transition: "all 0.5s linear",
         ...(variant !== "home"
           ? {
               top: ["8em", "8em", "8em", "unset"],

@@ -1,7 +1,7 @@
 import React from "react";
 import { Flex } from "./base";
 import Avatar from "./Avatar";
-import MainCard from "./ContentCard";
+import ContentCard from "./ContentCard";
 import { useLocation } from "react-router-dom";
 
 export type LayoutProps = {
@@ -37,6 +37,25 @@ export function Layout(props: LayoutProps) {
         paddingTop: [0, 0, 0, 80],
         paddingBottom: [0, 0, 0, 80],
         width: "100%",
+
+        ".page-enter": {
+          opacity: 0,
+          transform: "scale(1.1)",
+        },
+        ".page-enter-active": {
+          opacity: 1,
+          transform: "scale(1)",
+          transition: "opacity 300ms, transform 300ms",
+        },
+        ".page-exit": {
+          opacity: 1,
+          transform: "scale(1)",
+        },
+        ".page-exit-active": {
+          opacity: 0,
+          transform: "scale(0.9)",
+          transition: "opacity 300ms, transform 300ms",
+        },
       }}
     >
       <Flex
@@ -48,7 +67,7 @@ export function Layout(props: LayoutProps) {
         }}
       >
         <Avatar variant={variant} />
-        <MainCard variant={variant} title={title} {...other} />
+        <ContentCard variant={variant} title={title} {...other} />
       </Flex>
     </Flex>
   );

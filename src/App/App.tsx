@@ -1,8 +1,8 @@
 import React from "react";
+import { Box, ThemeProvider } from "../components/base";
+import { CSSTransition, SwitchTransition } from "react-transition-group";
 import { useLocation, useOutlet } from "react-router-dom";
 import { Layout } from "../components";
-import { Box, ThemeProvider } from "../components/base";
-
 import { routes } from "..";
 
 function App() {
@@ -14,7 +14,21 @@ function App() {
   return (
     <ThemeProvider>
       <Layout>
-        <Box ref={nodeRef}>{currentOutlet}</Box>
+        <SwitchTransition>
+          <CSSTransition
+            key={location.pathname}
+            nodeRef={nodeRef}
+            timeout={300}
+            classNames="page"
+            unmountOnExit
+          >
+            {(state) => (
+              <Box key={location.key} ref={nodeRef} className="page">
+                {currentOutlet}
+              </Box>
+            )}
+          </CSSTransition>
+        </SwitchTransition>
       </Layout>
     </ThemeProvider>
   );
