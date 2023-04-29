@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Card, Flex, Typography } from "./base";
-import NavigationMenu from "./NavigationMenu";
+import NavigationMenu from "./NavigationMenu/NavigationMenu";
 
 export type ContentCardProps = {
   children: React.ReactNode;

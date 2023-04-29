@@ -174,7 +174,10 @@ export const theme = {
         color: "#FFFFFF",
       },
       "&:focus, :focus-visible": {
-        outline: "secondary",
+        outline: "unset",
+        backgroundImage: `linear-gradient(to left, ${baseTheme.colors.lightenSecondary}, ${baseTheme.colors.secondary})`,
+        backgroundColor: "lightenSecondary",
+        color: "#FFFFFF",
       },
     },
     secondaryOutline: {
