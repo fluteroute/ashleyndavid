@@ -1,7 +1,9 @@
 import React from "react";
-import { Flex } from "./base";
+import { Box, Flex, IconButton, Typography } from "./base";
+import { faLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons";
 import Avatar from "./Avatar";
 import ContentCard from "./ContentCard";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useLocation } from "react-router-dom";
 
 export type LayoutProps = {
@@ -35,7 +37,7 @@ export function Layout(props: LayoutProps) {
         paddingLeft: [0, 0, 0, variant !== "home" ? 0 : 120],
         paddingRight: [0, 0, 0, 120],
         paddingTop: [0, 0, 0, 80],
-        paddingBottom: [0, 0, 0, 80],
+        paddingBottom: 0,
         width: "100%",
 
         ".page-enter": {
@@ -64,10 +66,58 @@ export function Layout(props: LayoutProps) {
           padding: ["20px", "20px", "60px", "60px"],
           marginTop: [-220, -220, -220, 0],
           height: ["unset", "unset", "unset", "100%"],
+          paddingBottom: [0, 0, 0, 80],
         }}
       >
         <Avatar variant={variant} />
         <ContentCard variant={variant} title={title} {...other} />
+      </Flex>
+      <Flex
+        sx={{
+          flexDirection: [
+            "column-reverse",
+            "column-reverse",
+            "column-reverse",
+            "row",
+          ],
+          alignSelf: "center",
+          alignItems: "center",
+          justifyContent: "space-between",
+          width: ["unset", "unset", "unset", "100%"],
+          flexWrap: "wrap",
+          paddingLeft: [0, 0, 0, variant !== "home" ? 120 : 0],
+          margin: [3, 3, 3, 1],
+        }}
+      >
+        <Box>
+          <Typography variant="cc">
+            © 2023 Ashley David. All rights reserved.
+          </Typography>
+        </Box>
+        <Flex sx={{ flexDirection: "row" }}>
+          <IconButton
+            aria-label="LinkedIn"
+            as="a"
+            // @ts-ignore
+            href="https://www.linkedin.com/in/ashleydavid/"
+            target="_blank"
+            sx={{ marginLeft: 1 }}
+            variant="transparent"
+          >
+            <FontAwesomeIcon icon={faLinkedin} />
+          </IconButton>
+          <IconButton
+            aria-label="GitHub"
+            as="a"
+            // @ts-ignore
+            href="https://github.com/fluteroute"
+            target="_blank"
+            sx={{ marginLeft: 1 }}
+            variant="transparent"
+          >
+            <FontAwesomeIcon icon={faGithub} />
+          </IconButton>
+        </Flex>
       </Flex>
     </Flex>
   );

@@ -1,9 +1,6 @@
 import React from "react";
-import { Button } from "../base";
+import { Button, ListBoxItem } from "../base";
 import { Link } from "react-router-dom";
-import styled from "@emotion/styled";
-
-const ListBoxItem = styled.li();
 
 export type NavigationMenuItemProps = { label: string; to: string };
 

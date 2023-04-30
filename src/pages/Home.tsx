@@ -1,10 +1,10 @@
 import React from "react";
-import { Typography } from "../components";
+import { Box, Typography } from "../components";
 
 export function Home() {
   return (
     <>
-      <p>
+      <Box sx={{ marginTop: "1em", marginBottom: "1em" }}>
         <Typography variant="body1">
           A highly skilled senior software engineer with a passion for building
           innovative design systems, web applications, and automated test
@@ -14,8 +14,8 @@ export function Home() {
           has contributed to the success of high-performance teams, as well as
           working at dynamic startups.
         </Typography>
-      </p>
-      <p>
+      </Box>
+      <Box sx={{ marginTop: "1em", marginBottom: "1em" }}>
         <Typography variant="body1">
           As a driven professional, Ashley is focused on career growth in full
           stack development and leadership, always striving to make a meaningful
@@ -27,8 +27,8 @@ export function Home() {
           spectacular Christmas light show, which has been featured on the local
           news, Youtube, and even with The Florida Orchestra.
         </Typography>
-      </p>
-      <p>
+      </Box>
+      <Box sx={{ marginTop: "1em", marginBottom: "1em" }}>
         <Typography variant="body1">
           At home, Ashley shares a special bond with Ninja, a beloved munchkin
           cat who adds joy and comfort to daily life. With a blend of technical
@@ -37,7 +37,14 @@ export function Home() {
           difference in the world of technology as the next chapter unfolds in
           Pacific Northwest.
         </Typography>
-      </p>
+      </Box>
+      <Box sx={{ marginTop: "1em", marginBottom: "1em" }}>
+        <Typography variant="body1">
+          To learn more about Ashley's story, explore her career achievements,
+          or get in touch, be sure to visit her About, Career, and Contact
+          pages.
+        </Typography>
+      </Box>
     </>
   );
 }

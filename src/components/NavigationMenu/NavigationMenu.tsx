@@ -1,13 +1,7 @@
 import React from "react";
-import { Box, Menu } from "../base";
+import { Box, ListBox, Menu } from "../base";
 import { NavigationMenuItem } from "./";
-import styled from "@emotion/styled";
 import { useLocation } from "react-router-dom";
-
-const ListBox = styled.ul(() => ({
-  listStyleType: "none",
-  paddingInlineStart: 0,
-}));
 
 function NavigationMenu() {
   const location = useLocation();
@@ -26,6 +20,7 @@ function NavigationMenu() {
         <ListBox
           role="listbox"
           style={{ listStyleType: "none", paddingInlineStart: 0 }}
+          variant="none"
         >
           <NavigationMenuItem
             label="Home"
