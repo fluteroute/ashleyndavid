@@ -30,7 +30,7 @@ export const baseTheme = {
     },
     h3: {
       fontFamily: "Arial, sans-serif",
-      fontSize: "24px",
+      fontSize: "28px",
       fontStyle: "normal",
       fontWeight: "200",
       lineHeight: "normal",

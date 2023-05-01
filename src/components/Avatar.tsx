@@ -31,8 +31,8 @@ function Avatar(props: AvatarProps) {
           : {
               top: ["15em", "15em", "15em", "5em"],
               left: ["none", "none", "none", "6em"],
-              maxWidth: [220, 280, 300, 554],
-              minWidth: [0, 0, 300, 554],
+              maxWidth: [220, 280, 280, 554],
+              minWidth: [0, 0, 280, 448],
             }),
       }}
     >

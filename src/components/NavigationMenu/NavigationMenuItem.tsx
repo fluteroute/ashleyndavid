@@ -1,5 +1,13 @@
 import React from "react";
 import { Button, ListBoxItem } from "../base";
+import {
+  IconDefinition,
+  faAddressCard,
+  faClipboardList,
+  faHouse,
+  faEnvelope,
+} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
 
 export type NavigationMenuItemProps = { label: string; to: string };
@@ -9,6 +17,12 @@ export const NavigationMenuItem = React.forwardRef<
   NavigationMenuItemProps
 >((props, ref) => {
   const { label, to, ...other } = props;
+  const iconMap: Record<string, IconDefinition> = {
+    Home: faHouse,
+    About: faAddressCard,
+    Career: faClipboardList,
+    Contact: faEnvelope,
+  };
 
   return (
     <ListBoxItem ref={ref}>
@@ -38,6 +52,10 @@ export const NavigationMenuItem = React.forwardRef<
         }}
         {...other}
       >
+        <FontAwesomeIcon
+          icon={iconMap[label]}
+          style={{ marginRight: "12px" }}
+        />
         {label}
       </Button>
     </ListBoxItem>

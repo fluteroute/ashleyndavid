@@ -1,10 +1,10 @@
 import React from "react";
-import { Box, Flex, IconButton, Typography } from "./base";
-import { faLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons";
 import Avatar from "./Avatar";
 import ContentCard from "./ContentCard";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Flex } from "./base";
+import Footer from "./Footer";
 import { useLocation } from "react-router-dom";
+import NavigationLink from "./NavigationLink";
 
 export type LayoutProps = {
   children: React.ReactNode;
@@ -18,6 +18,24 @@ export function Layout(props: LayoutProps) {
     location.pathname !== "/"
       ? location.pathname.charAt(1).toUpperCase() + location.pathname.slice(2)
       : "Ashley David";
+  const careerDescription =
+    location.pathname === "/career" ? (
+      <>
+        For a pdf copy of Ashley's resume, please reach out via the{" "}
+        <NavigationLink
+          to="/contact"
+          sx={{ fontStyle: "italic", fontSize: "16px" }}
+        >
+          Contact's
+        </NavigationLink>{" "}
+        page. This is a shortened summarized version.
+      </>
+    ) : undefined;
+  const homeDescription =
+    location.pathname === "/"
+      ? `"Transforming software landscapes: Merging creativity, expertise, and growth for exceptional results."`
+      : undefined;
+
   const variant = location.pathname !== "/" ? "main" : "home";
 
   return (
@@ -34,8 +52,6 @@ export function Layout(props: LayoutProps) {
         height: "100vh",
         alignItems: "center",
         justifyContent: "center",
-        paddingLeft: [0, 0, 0, variant !== "home" ? 0 : 120],
-        paddingRight: [0, 0, 0, 120],
         paddingTop: [0, 0, 0, 80],
         paddingBottom: 0,
         width: "100%",
@@ -63,62 +79,23 @@ export function Layout(props: LayoutProps) {
       <Flex
         sx={{
           flexDirection: ["column", "column", "column", "row"],
-          padding: ["20px", "20px", "60px", "60px"],
+          padding: ["20px", "20px", "0px", "0px"],
           marginTop: [-220, -220, -220, 0],
-          height: ["unset", "unset", "unset", "100%"],
           paddingBottom: [0, 0, 0, 80],
+          maxWidth: ["unset", "unset", "unset", 1600],
+          minWidth: ["unset", "unset", "unset", 1200],
+          minHeight: ["unset", "unset", "unset", 928],
         }}
       >
         <Avatar variant={variant} />
-        <ContentCard variant={variant} title={title} {...other} />
+        <ContentCard
+          description={careerDescription || homeDescription}
+          variant={variant}
+          title={title}
+          {...other}
+        />
       </Flex>
-      <Flex
-        sx={{
-          flexDirection: [
-            "column-reverse",
-            "column-reverse",
-            "column-reverse",
-            "row",
-          ],
-          alignSelf: "center",
-          alignItems: "center",
-          justifyContent: "space-between",
-          width: ["unset", "unset", "unset", "100%"],
-          flexWrap: "wrap",
-          paddingLeft: [0, 0, 0, variant !== "home" ? 120 : 0],
-          margin: [3, 3, 3, 1],
-        }}
-      >
-        <Box>
-          <Typography variant="cc">
-            © 2023 Ashley David. All rights reserved.
-          </Typography>
-        </Box>
-        <Flex sx={{ flexDirection: "row" }}>
-          <IconButton
-            aria-label="LinkedIn"
-            as="a"
-            // @ts-ignore
-            href="https://www.linkedin.com/in/ashleydavid/"
-            target="_blank"
-            sx={{ marginLeft: 1 }}
-            variant="transparent"
-          >
-            <FontAwesomeIcon icon={faLinkedin} />
-          </IconButton>
-          <IconButton
-            aria-label="GitHub"
-            as="a"
-            // @ts-ignore
-            href="https://github.com/fluteroute"
-            target="_blank"
-            sx={{ marginLeft: 1 }}
-            variant="transparent"
-          >
-            <FontAwesomeIcon icon={faGithub} />
-          </IconButton>
-        </Flex>
-      </Flex>
+      <Footer variant={variant} />
     </Flex>
   );
 }
