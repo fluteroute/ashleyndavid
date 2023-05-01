@@ -138,11 +138,17 @@ export function Home() {
         As a driven professional, Ashley is focused on career growth in full
         stack development and leadership, always striving to make a meaningful
         impact in the tech industry. Outside of her professional life, Ashley is
-        an avid music enthusiast, playing piccolo and flute with the Wind
-        Symphony of St. Petersburg College. She loves hiking and exploring theme
-        parks with her husband, creating cherished memories together. During the
-        holiday season, Ashley and her husband are known for their spectacular
-        Christmas light show, which has been featured on the local news,{" "}
+        an avid music enthusiast, playing piccolo and flute with the{" "}
+        <Link
+          href="http://www.nathanmuehl.com/spcbands/ws.html"
+          target="_blank"
+        >
+          Wind Symphony of St. Petersburg College
+        </Link>
+        . She loves hiking and exploring theme parks with her husband, creating
+        cherished memories together. During the holiday season, Ashley and her
+        husband are known for their spectacular Christmas light show, which has
+        been featured on the local news,{" "}
         <Link
           href="https://www.youtube.com/@GerryHernandezMusic"
           target="_blank"

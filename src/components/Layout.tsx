@@ -21,14 +21,14 @@ export function Layout(props: LayoutProps) {
   const careerDescription =
     location.pathname === "/career" ? (
       <>
-        For a pdf copy of Ashley's resume, please reach out via the{" "}
+        This is a shortened version of Ashley's resume. Please reach out via the{" "}
         <NavigationLink
           to="/contact"
           sx={{ fontStyle: "italic", fontSize: "16px" }}
         >
           Contact's
         </NavigationLink>{" "}
-        page. This is a shortened summarized version.
+        page for a full digital copy.
       </>
     ) : undefined;
   const homeDescription =
@@ -95,7 +95,7 @@ export function Layout(props: LayoutProps) {
           {...other}
         />
       </Flex>
-      <Footer variant={variant} />
+      <Footer />
     </Flex>
   );
 }

@@ -3,13 +3,7 @@ import { Box, Flex, IconButton, Typography } from "./base";
 import { faLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-export type FooterProps = {
-  variant: "home" | "main";
-};
-
-export function Footer(props: FooterProps) {
-  const { variant } = props;
-
+export function Footer() {
   return (
     <Flex
       sx={{

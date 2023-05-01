@@ -6,7 +6,7 @@ export const ListBoxItem = styled.li({
   fontSize: "18px",
   fontStyle: "normal",
   fontWeight: "400",
-  lineHeight: "normal",
+  lineHeight: "24px",
   letterSpacing: "1px",
 });
 

@@ -18,6 +18,7 @@ export const baseTheme = {
       fontWeight: "600",
       lineHeight: "normal",
       letterSpacing: 1,
+      color: "textPrimary",
     },
     h2: {
       fontFamily:
@@ -27,6 +28,7 @@ export const baseTheme = {
       fontWeight: "600",
       lineHeight: "normal",
       letterSpacing: "1px",
+      color: "textPrimary",
     },
     h3: {
       fontFamily: "Arial, sans-serif",
@@ -35,6 +37,7 @@ export const baseTheme = {
       fontWeight: "200",
       lineHeight: "normal",
       letterSpacing: "1px",
+      color: "textPrimary",
     },
     h4: {
       fontFamily: "Arial, sans-serif",
@@ -43,22 +46,25 @@ export const baseTheme = {
       fontWeight: "200",
       lineHeight: "normal",
       letterSpacing: "1px",
+      color: "textPrimary",
     },
     body1: {
       fontFamily: "Arial, sans-serif",
       fontSize: "18px",
       fontStyle: "normal",
       fontWeight: "400",
-      lineHeight: "normal",
+      lineHeight: "24px",
       letterSpacing: "1px",
+      color: "textPrimary",
     },
     body2: {
       fontFamily: "Arial, sans-serif",
       fontSize: "16px",
       fontStyle: "normal",
       fontWeight: "400",
-      lineHeight: "normal",
+      lineHeight: "24px",
       letterSpacing: "1px",
+      color: "textPrimary",
     },
     button: {
       fontFamily: "Source Code Pro, Arial",
@@ -67,6 +73,7 @@ export const baseTheme = {
       fontWeight: "600",
       lineHeight: "normal",
       letterSpacing: "1px",
+      color: "textPrimary",
     },
     label: {
       fontFamily: "Source Code Pro, Arial",
@@ -75,6 +82,7 @@ export const baseTheme = {
       fontWeight: "200",
       lineHeight: "normal",
       letterSpacing: "1px",
+      color: "textPrimary",
     },
     link: {
       fontFamily: "Source Code Pro, Arial",
@@ -99,6 +107,7 @@ export const baseTheme = {
       fontWeight: "200",
       lineHeight: "normal",
       letterSpacing: "1px",
+      color: "textPrimary",
     },
   },
 };
@@ -108,7 +117,7 @@ export const theme = {
     backgroundPrimary: "#1B1F3A",
     textPrimary: "#F5F5F5",
     lightenTextPrimary: "#FFFFFF",
-    textSecondary: "#E5E4E4",
+    textSecondary: "#D3CFCF",
     ...baseTheme.colors,
   },
   text: baseTheme.typography,
@@ -284,6 +293,9 @@ export const theme = {
         backgroundColor: "disabled",
         opacity: 0.5,
       },
+      "::placeholder": {
+        color: "textSecondary",
+      },
     },
     textarea: {
       ...baseTheme.typography.body1,
@@ -303,6 +315,9 @@ export const theme = {
       "&[data-disabled]": {
         backgroundColor: "disabled",
         opacity: 0.5,
+      },
+      "::placeholder": {
+        color: "textSecondary",
       },
     },
     label: {

@@ -2,6 +2,7 @@ import React from "react";
 import { Textarea, TextareaProps } from "theme-ui";
 import { Typography } from "./Typography";
 import { v4 as uuidv4 } from "uuid";
+import { Box } from ".";
 
 export interface TextAreaProps extends TextareaProps {
   label?: string;
@@ -34,13 +35,13 @@ export const TextArea = React.forwardRef<HTMLTextAreaElement, TextAreaProps>(
     };
 
     return (
-      <>
+      <Box sx={{ marginTop: 3, marginBottom: 3 }}>
         {label && (
           <Typography
             as="label"
             id={labelId}
             variant="label"
-            sx={{ color: "textSecondary", marginLeft: "6px" }}
+            sx={{ color: "textPrimary", marginLeft: "6px" }}
           >
             {label}
             {isRequired && "*"}
@@ -57,7 +58,7 @@ export const TextArea = React.forwardRef<HTMLTextAreaElement, TextAreaProps>(
           rows={rows}
           {...props}
         />
-      </>
+      </Box>
     );
   }
 );

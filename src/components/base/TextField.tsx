@@ -2,6 +2,7 @@ import React from "react";
 import { Input, InputProps } from "theme-ui";
 import { Typography } from "./Typography";
 import { v4 as uuidv4 } from "uuid";
+import { Box } from ".";
 
 export interface TextFieldProps extends InputProps {
   label?: string;
@@ -26,13 +27,13 @@ export const TextField = React.forwardRef<HTMLInputElement, TextFieldProps>(
     };
 
     return (
-      <>
+      <Box sx={{ marginBottom: 3 }}>
         {label && (
           <Typography
             as="label"
             id={labelId}
             variant="label"
-            sx={{ color: "textSecondary", marginLeft: "6px" }}
+            sx={{ color: "textPrimary", marginLeft: "6px" }}
           >
             {label}
             {isRequired && "*"}
@@ -48,7 +49,7 @@ export const TextField = React.forwardRef<HTMLInputElement, TextFieldProps>(
           required={isRequired && true}
           {...props}
         />
-      </>
+      </Box>
     );
   }
 );

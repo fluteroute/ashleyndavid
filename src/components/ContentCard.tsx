@@ -1,6 +1,8 @@
 import React from "react";
 import { Box, Card, Flex, Typography } from "./base";
 import NavigationMenu from "./NavigationMenu/NavigationMenu";
+import { useLocation } from "react-router-dom";
+import { Divider } from "theme-ui";
 
 export type ContentCardProps = {
   children: React.ReactNode;
@@ -10,7 +12,16 @@ export type ContentCardProps = {
 };
 
 export function ContentCard(props: ContentCardProps) {
-  const { description, title, variant, ...other } = props;
+  const { children, description, title, variant, ...other } = props;
+  const { pathname } = useLocation();
+
+  // Scroll to the top when route changes
+  React.useEffect(() => {
+    document.getElementsByClassName("content")[0]?.scrollTo({
+      top: 0,
+      left: 0,
+    });
+  }, [pathname]);
 
   return (
     <Card>
@@ -27,31 +38,37 @@ export function ContentCard(props: ContentCardProps) {
             justifyContent: "space-between",
           }}
         >
-          <Box sx={{ marginBottom: description ? 3 : undefined }}>
+          <Box>
             <Typography variant="h1" sx={{ fontSize: [44, 44, 44, 64] }}>
               {title}
             </Typography>
-            <Box>
-              <Typography variant="body2" sx={{ fontStyle: "italic" }}>
-                {description}
-              </Typography>
-            </Box>
           </Box>
           <NavigationMenu />
         </Flex>
+        <Divider />
         <Box
+          className="content"
           sx={{
-            height: [
-              title !== "Career" && title !== "Ashley David" ? "36vh" : "24vh",
-              title !== "Career" && title !== "Ashley David" ? "36vh" : "24vh",
-              title !== "Career" && title !== "Ashley David" ? "36vh" : "24vh",
-              title !== "Career" && title !== "Ashley David" ? "58vh" : "54vh",
-            ],
+            height: ["36vh", "36vh", "36vh", "58vh"],
             overflowY: "scroll",
             paddingRight: [3, 3, 3, 40],
           }}
           {...other}
-        />
+        >
+          <Box>
+            <Typography
+              variant="body2"
+              sx={{
+                fontStyle: "italic",
+                fontSize: ["12px", "inherit"],
+                lineHeight: ["12px", "inherit"],
+              }}
+            >
+              {description}
+            </Typography>
+          </Box>
+          {children}
+        </Box>
       </Box>
     </Card>
   );

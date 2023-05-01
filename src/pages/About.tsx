@@ -1,6 +1,7 @@
 import React from "react";
 import {
   Image,
+  Link,
   ListBox,
   ListBoxItem,
   NavigationLink,
@@ -17,7 +18,7 @@ export function About() {
         user-friendly and visually appealing web applications. When I'm not
         coding away or exploring the latest technology trends, you'll find me
         playing the flute, hiking through scenic trails, or seeking out
-        thrilling experiences at theme parks with my husband
+        thrilling experiences at theme parks with my husband.
       </Paragraph>
       <Grid
         gap={4}
@@ -56,8 +57,9 @@ export function About() {
           my career path once more. As a software engineer, I have created
           design systems, web applications, and automated test frameworks. Now,
           with experience in several programming languages, I am passionate
-          about providing end-to-end full-stack solutions. Please see the Career
-          page for more details.
+          about providing end-to-end full-stack solutions. Please visit the{" "}
+          <NavigationLink to="/career">Career</NavigationLink> page for more in
+          depth details on my professional experience.
         </Paragraph>
       </Grid>
       <Paragraph>
@@ -77,9 +79,15 @@ export function About() {
               }}
             >
               <ListBoxItem>
-                Flute: As a devoted flutist, I volunteer with the Wind Symphony
-                of St. Petersburg College, embracing opportunities to perform in
-                small ensembles such as flute choirs and other wind groups.
+                Flute: As a devoted flutist, I volunteer with the{" "}
+                <Link
+                  href="http://www.nathanmuehl.com/spcbands/ws.html"
+                  target="_blank"
+                >
+                  Wind Symphony of St. Petersburg College
+                </Link>
+                , embracing opportunities to perform in small ensembles such as
+                flute choirs and other wind groups.
               </ListBoxItem>
               <Image
                 src="flute.jpg"
