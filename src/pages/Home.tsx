@@ -17,12 +17,11 @@ export function Home() {
   return (
     <>
       <Paragraph>
-        A highly skilled senior software engineer with a passion for building innovative design
-        systems, web applications, and automated test frameworks. Currently based in Tampa, FL,
-        Ashley is excited to embark on a new journey by relocating to Seattle, WA. With vast
-        experience in front end development, combined with Scrum Master expertise, Ashley has
-        contributed to the success of high-performance teams, as well as working at dynamic
-        startups.
+        A software engineer with a passion for building innovative design systems, web applications,
+        and automated test frameworks. Currently based in Tampa, FL, Ashley is excited to embark on
+        a new journey by relocating to Seattle, WA. With vast experience in front end development,
+        combined with Scrum Master expertise, Ashley has contributed to the success of
+        high-performance teams, as well as working at dynamic startups.
       </Paragraph>
       <FLToWA />
       <Paragraph>

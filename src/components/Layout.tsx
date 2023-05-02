@@ -23,14 +23,14 @@ export function Layout(props: LayoutProps) {
       <>
         {"This is a shortened version of Ashley's resume. Please reach out via the "}
         <NavigationLink to="/contact" sx={{ fontStyle: 'italic', fontSize: '16px' }}>
-          {"Contact's"}
+          {'Contact'}
         </NavigationLink>{' '}
-        page for a full digital copy.
+        page for a pdf.
       </>
     ) : undefined;
   const homeDescription =
     location.pathname === '/'
-      ? `"Transforming software landscapes: Merging creativity, expertise, and growth for exceptional results."`
+      ? 'Transforming software landscapes: Merging creativity, expertise, and growth for exceptional results.'
       : undefined;
 
   const variant = location.pathname !== '/' ? 'main' : 'home';

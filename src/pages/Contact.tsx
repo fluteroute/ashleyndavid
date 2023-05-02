@@ -23,9 +23,9 @@ export function Contact() {
           }}
         >
           <Box sx={{ marginBottom: '1em' }}>
-            <Typography variant="body2">
+            <Typography variant="body1">
               {"If you're interested in connecting with me professionally, you can find me on " +
-                "LinkedIn. Feel free to send a connection request or drop me a message—I'm always "}
+                "LinkedIn. Feel free to send a connection request or drop me a message. I'm always "}
               delighted to meet new people and explore potential collaborations. Additionally,
               {" you're welcome to visit my GitHub profile to explore my contributions, projects, and " +
                 "repositories. Let's connect and create something extraordinary together!"}

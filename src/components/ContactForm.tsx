@@ -36,9 +36,34 @@ export function ContactForm() {
       isLoading: true,
     });
 
+    const errorState = () =>
+      setButtonState({
+        success: false,
+        failed: true,
+        isLoading: false,
+      });
+    const successState = () => {
+      setButtonState({
+        success: true,
+        failed: false,
+        isLoading: false,
+      });
+      setInputs({
+        email: '',
+        subject: '',
+        message: '',
+      });
+      recaptchaRef.current?.reset();
+    };
+
+    const token = recaptchaRef?.current?.getValue();
+    if (!token) {
+      return errorState();
+    }
+
+    let response;
     try {
-      const token = recaptchaRef?.current?.getValue();
-      const response = await axios({
+      response = await axios({
         method: 'POST',
         url: 'https://formbold.com/s/oaPkK',
         data: {
@@ -46,28 +71,15 @@ export function ContactForm() {
           'g-recaptcha-response': token,
         },
       });
-
-      if (response.status === 201) {
-        setButtonState({
-          success: true,
-          failed: false,
-          isLoading: false,
-        });
-        setInputs({
-          email: '',
-          subject: '',
-          message: '',
-        });
-      }
     } catch (error) {
-      setButtonState({
-        success: false,
-        failed: true,
-        isLoading: false,
-      });
+      return errorState();
     }
 
-    recaptchaRef.current?.reset();
+    if (response?.status === 201) {
+      successState();
+    } else {
+      return errorState();
+    }
   };
 
   return (
