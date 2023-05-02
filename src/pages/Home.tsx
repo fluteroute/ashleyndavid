@@ -184,11 +184,11 @@ export function Home() {
             }}
           >
             <IconButton
-              aria-label="Career"
+              aria-label="Contact"
               as={NavigationLink}
               // eslint-disable-next-line @typescript-eslint/ban-ts-comment
               // @ts-ignore
-              to="/career"
+              to="/contact"
               sx={{
                 marginLeft: 1,
                 fontSize: '2em',
