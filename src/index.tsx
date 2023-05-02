@@ -20,7 +20,7 @@ export const routes = [
   {
     path: "career",
     element: <Career />,
-    about: "Career",
+    name: "Career",
     nodeRef: React.createRef<HTMLDivElement>(),
   },
   {

@@ -56,6 +56,7 @@ export function ContactForm() {
         name="email"
         label="Email"
         sx={{ marginTop: 0 }}
+        isRequired
       />
       <TextField
         onChange={handleOnChange}
@@ -64,6 +65,7 @@ export function ContactForm() {
         type="text"
         name="subject"
         label="Subject"
+        isRequired
       />
       <TextArea
         onChange={handleOnChange}
@@ -72,6 +74,7 @@ export function ContactForm() {
         name="message"
         label="Message"
         placeholder="Hi Ashley! I wanted to get in touch..."
+        isRequired
       />
       <Flex
         sx={{

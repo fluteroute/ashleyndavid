@@ -8,7 +8,14 @@ import {
   NavigationLink,
   Paragraph,
   FLToWA,
+  IconButton,
 } from "../components";
+import {
+  faAddressCard,
+  faClipboardList,
+  faEnvelope,
+} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export function Home() {
   return (
@@ -122,10 +129,93 @@ export function Home() {
       </Grid>
       <Paragraph>
         To learn more about Ashley's story, explore her career achievements, or
-        get in touch, be sure to visit her{" "}
-        <NavigationLink to="/about">About</NavigationLink>,{" "}
-        <NavigationLink to="/career">Career</NavigationLink>, and{" "}
-        <NavigationLink to="/career">Contact</NavigationLink> pages.
+        get in touch, be sure to visit her other pages:
+        <Flex
+          sx={{
+            flexDirection: "row",
+            justifyContent: ["center", "space-evenly"],
+            marginTop: 3,
+          }}
+        >
+          <Flex
+            sx={{
+              flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <IconButton
+              aria-label="About"
+              as={NavigationLink}
+              // @ts-ignore
+              to="/about"
+              sx={{
+                marginLeft: 1,
+                fontSize: "2em",
+                height: "2.5em",
+                width: "2.5em",
+              }}
+              variant="transparent"
+            >
+              <FontAwesomeIcon icon={faAddressCard} size="xl" />
+            </IconButton>
+            <NavigationLink sx={{ marginTop: 2 }} to="/about" variant="nav">
+              About
+            </NavigationLink>
+          </Flex>
+          <Flex
+            sx={{
+              flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <IconButton
+              aria-label="Career"
+              as={NavigationLink}
+              // @ts-ignore
+              to="/career"
+              sx={{
+                marginLeft: 1,
+                fontSize: "2em",
+                height: "2.5em",
+                width: "2.5em",
+              }}
+              variant="transparent"
+            >
+              <FontAwesomeIcon icon={faClipboardList} size="xl" />
+            </IconButton>
+            <NavigationLink sx={{ marginTop: 2 }} to="/career" variant="nav">
+              Career
+            </NavigationLink>
+          </Flex>
+          <Flex
+            sx={{
+              flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <IconButton
+              aria-label="Career"
+              as={NavigationLink}
+              // @ts-ignore
+              to="/career"
+              sx={{
+                marginLeft: 1,
+                fontSize: "2em",
+                height: "2.5em",
+                width: "2.5em",
+              }}
+              variant="transparent"
+            >
+              <FontAwesomeIcon icon={faEnvelope} size="xl" />
+            </IconButton>
+            <NavigationLink sx={{ marginTop: 2 }} to="/contact" variant="nav">
+              Contact
+            </NavigationLink>
+          </Flex>
+        </Flex>
       </Paragraph>
     </>
   );

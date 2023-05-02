@@ -9,3 +9,4 @@ export * from "./Layout";
 export * from "./NavigationMenu";
 export * from "./NavigationLink";
 export * from "./Paragraph";
+export * from "./TechnologyListBoxItem";

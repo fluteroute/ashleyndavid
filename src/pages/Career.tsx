@@ -4,25 +4,54 @@ import {
   CareerExperience,
   ListBox,
   ListBoxItem,
-  ListBoxItemProps,
+  TechnologyListBoxItem,
   Typography,
 } from "../components";
 
-const CareerListBoxItem = ({
-  children,
-  tech,
-  ...other
-}: ListBoxItemProps & { tech: string }) => (
-  <ListBoxItem
-    style={{ paddingTop: "4px", paddingBottom: "4px", fontSize: "16px" }}
-    {...other}
-  >
-    <Typography variant="body1" sx={{ fontWeight: 800, fontSize: "18px" }}>
-      {tech}
-    </Typography>{" "}
-    {children}
-  </ListBoxItem>
-);
+const technologies = [
+  { tech: "SDLC", values: "Scrum, Agile, Kanban, Waterfall" },
+  { tech: "Project Management", values: "Jira, VersionOne" },
+  { tech: "Test Management", values: "TestRail, QASpace, XRay" },
+  { tech: "OS", values: "MacOs, Windows" },
+  {
+    tech: "Languages/Runtimes",
+    value: "TypeScript, JavaScript, NodeJS, C#, SQL, Python",
+  },
+  {
+    tech: "UI Frameworks/Libraries",
+    values: "React, Emotion, Storybook, MaterialUI",
+  },
+  { tech: "CMS", values: "Contentful" },
+  {
+    tech: "IDEs",
+    values:
+      "Visual Studio Code, Visual Studio, DataGrip, PyCharm, Atom, Postman",
+  },
+  { tech: "Source Control", values: "Git" },
+  {
+    tech: "CI",
+    values: "GitLab, GitHub Actions, Azure DevOps/VSTS, Jenkins, TFS, TeamCity",
+  },
+  { tech: "Databases", values: "Postgres, Microsoft SQL Server" },
+  {
+    tech: "Functional Test Frameworks",
+    values: "Cypress.io, Coded UI, Selenium WebDriver, SpecFlow, Behave, Robot",
+  },
+  {
+    tech: "Unit Test Frameworks",
+    values: "React Testing Library, Jest, Mocha, NUnit, MSTest",
+  },
+  { tech: "Misc. Testing Platforms", values: "Percy, BrowserStack" },
+  {
+    tech: "Productivity Software",
+    values: "Microsoft Office Suite, Google G Suite",
+  },
+  {
+    tech: "Other",
+    values:
+      "NextJS, Express.js, Firebase, Chrome Dev Tools, Bash, VirtualBox, Hyper-V, MediaWiki",
+  },
+];
 
 export function Career() {
   return (
@@ -32,49 +61,9 @@ export function Career() {
       </Box>
       <Box sx={{ marginTop: "1em", marginBottom: "1em" }}>
         <ListBox>
-          <CareerListBoxItem tech="SDLC:">
-            Scrum, Agile, Kanban, Waterfall{" "}
-          </CareerListBoxItem>
-          <CareerListBoxItem tech="Project Management:">
-            Jira, VersionOne
-          </CareerListBoxItem>
-          <CareerListBoxItem tech="Test Management:">
-            TestRail, QASpace, XRay
-          </CareerListBoxItem>
-          <CareerListBoxItem tech="OS:">MacOS, Windows</CareerListBoxItem>
-          <CareerListBoxItem tech="Languages/Runtimes:">
-            TypeScript, JavaScript, NodeJS, C#, SQL, Python{" "}
-          </CareerListBoxItem>
-          <CareerListBoxItem tech="UI Frameworks/Libraries:">
-            React, Emotion, Storybook, MaterialUI
-          </CareerListBoxItem>
-          <CareerListBoxItem tech="CMS:">Contentful</CareerListBoxItem>
-          <CareerListBoxItem tech="IDEs:">
-            Visual Studio Code, Visual Studio, DataGrip, PyCharm, Atom, Postman
-          </CareerListBoxItem>
-          <CareerListBoxItem tech="Source Control:">Git</CareerListBoxItem>
-          <CareerListBoxItem tech="CI:">
-            GitLab, GitHub Actions, Azure DevOps/VSTS, Jenkins, TFS, TeamCity
-          </CareerListBoxItem>
-          <CareerListBoxItem tech="Databases:">
-            Postgres, Microsoft SQL Server
-          </CareerListBoxItem>
-          <CareerListBoxItem tech="Functional Test Frameworks:">
-            Cypress.io, Coded UI, Selenium WebDriver, SpecFlow, Behave, Robot
-          </CareerListBoxItem>
-          <CareerListBoxItem tech="Unit Test Frameworks:">
-            React Testing Library, Jest, Mocha, NUnit, MSTest
-          </CareerListBoxItem>
-          <CareerListBoxItem tech="Misc. Testing Platforms:">
-            Percy, BrowserStack
-          </CareerListBoxItem>
-          <CareerListBoxItem tech="Productivity Software:">
-            Microsoft Office Suite, Google G Suite
-          </CareerListBoxItem>
-          <CareerListBoxItem tech="Other:">
-            NextJS, Express.js, Firebase, Chrome Dev Tools, Bash, VirtualBox,
-            Hyper-V, MediaWiki
-          </CareerListBoxItem>
+          {technologies.map(({ tech, values }) => (
+            <TechnologyListBoxItem tech={tech}>{values}</TechnologyListBoxItem>
+          ))}
         </ListBox>
       </Box>
       <Box sx={{ marginTop: "1em", marginBottom: "1em" }}>

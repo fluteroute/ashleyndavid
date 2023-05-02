@@ -1,10 +1,17 @@
 import React from "react";
 import { Box, ListBox, Menu } from "../base";
 import { NavigationMenuItem } from "./";
+import { routes } from "../../index";
 import { useLocation } from "react-router-dom";
 
 function NavigationMenu() {
   const location = useLocation();
+  const [open, setOpen] = React.useState(false);
+
+  React.useEffect(() => {
+    open && setOpen(!open);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [location.pathname]);
 
   return (
     <Box
@@ -16,32 +23,24 @@ function NavigationMenu() {
         right: ["1em", "1em", "1em", "unset"],
       }}
     >
-      <Menu align="start" side="right">
+      <Menu
+        align="start"
+        side="right"
+        open={open}
+        onOpenChange={(openProp) => setOpen(openProp)}
+      >
         <ListBox
           role="listbox"
           style={{ listStyleType: "none", paddingInlineStart: 0 }}
           variant="none"
         >
-          <NavigationMenuItem
-            label="Home"
-            to="/"
-            data-active={location.pathname === "/" || undefined}
-          />
-          <NavigationMenuItem
-            label="About"
-            to="/about"
-            data-active={location.pathname === "/about" || undefined}
-          />
-          <NavigationMenuItem
-            label="Career"
-            to="/career"
-            data-active={location.pathname === "/career" || undefined}
-          />
-          <NavigationMenuItem
-            label="Contact"
-            to="/contact"
-            data-active={location.pathname === "/contact" || undefined}
-          />
+          {routes.map(({ path, name }) => (
+            <NavigationMenuItem
+              label={name as string}
+              to={path}
+              data-active={location.pathname === path || undefined}
+            />
+          ))}
         </ListBox>
       </Menu>
     </Box>
