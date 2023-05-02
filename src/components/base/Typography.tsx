@@ -7,9 +7,6 @@ export interface TypographyProps extends TextProps {
   variant?: keyof typeof baseTheme.typography;
 }
 
-/**
- * Primary UI component for user interaction
- */
 export const Typography = React.forwardRef<HTMLDivElement, TypographyProps>((props, ref) => {
   const { color = 'textPrimary', variant, sx, ...other } = props;
 

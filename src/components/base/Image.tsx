@@ -2,9 +2,7 @@ import React from 'react';
 import { Image as ThemeUIImage, ImageProps as ThemeUIImageProps } from 'theme-ui';
 
 export type ImageProps = ThemeUIImageProps;
-/**
- * Primary UI component for user interaction
- */
+
 export const Image = React.forwardRef<HTMLImageElement, ImageProps>(
   ({ variant = 'default', ...props }, ref) => (
     <ThemeUIImage ref={ref} variant={variant} {...props} />

@@ -7,9 +7,6 @@ export interface ButtonProps extends ThemeUIButtonProps {
   onClick?: () => void;
 }
 
-/**
- * Primary UI component for user interaction
- */
 export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ children, isDisabled, onClick, variant = 'primary', ...props }, ref) => {
     const handleClick = () => {

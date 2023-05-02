@@ -10,9 +10,6 @@ export interface IconButtonProps extends ThemeUIIconButtonProps {
   onClick?: React.MouseEventHandler<HTMLButtonElement> | undefined;
 }
 
-/**
- * Primary UI component for user interaction
- */
 export const IconButton = React.forwardRef<HTMLButtonElement, IconButtonProps>(
   ({ children, isDisabled, onClick, variant = 'primary', sx, ...props }, ref) => {
     const handleClick = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
