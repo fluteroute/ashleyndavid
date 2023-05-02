@@ -1,10 +1,15 @@
 import React from "react";
-import { Box, Button, Flex, TextField, TextArea } from "./";
+import { Box, Flex, TextField, TextArea, SubmitButton } from "./";
 import axios from "axios";
 import ReCAPTCHA from "react-google-recaptcha";
 
 export function ContactForm() {
   const recaptchaRef = React.createRef<ReCAPTCHA>();
+  const [buttonState, setButtonState] = React.useState({
+    success: false,
+    failed: false,
+    isLoading: false,
+  });
   const [inputs, setInputs] = React.useState({
     email: "",
     subject: "",
@@ -25,6 +30,12 @@ export function ContactForm() {
   const handleOnSubmit = async (event: { preventDefault: () => void }) => {
     event.preventDefault();
 
+    setButtonState({
+      success: false,
+      failed: false,
+      isLoading: true,
+    });
+
     try {
       const token = recaptchaRef?.current?.getValue();
       const response = await axios({
@@ -37,10 +48,23 @@ export function ContactForm() {
       });
 
       if (response.status === 201) {
-        console.log(response);
+        setButtonState({
+          success: true,
+          failed: false,
+          isLoading: false,
+        });
+        setInputs({
+          email: "",
+          subject: "",
+          message: "",
+        });
       }
     } catch (error) {
-      console.log(error);
+      setButtonState({
+        success: false,
+        failed: true,
+        isLoading: false,
+      });
     }
 
     recaptchaRef.current?.reset();
@@ -85,12 +109,17 @@ export function ContactForm() {
         }}
       >
         <Box sx={{ marginLeft: 2, marginTop: 3, marginBottom: 3 }}>
-          <ReCAPTCHA ref={recaptchaRef} />
+          <ReCAPTCHA
+            ref={recaptchaRef}
+            sitekey="6LcuGdIlAAAAAOPlwb_U_3zuYC8rP30TMs0TQkLX"
+          />
         </Box>
         <Box>
-          <Button type="submit" sx={{ marginLeft: 3 }}>
-            Send Message
-          </Button>
+          <SubmitButton
+            success={buttonState.success}
+            failed={buttonState.failed}
+            isLoading={buttonState.isLoading}
+          />
         </Box>
       </Flex>
     </form>

@@ -8,6 +8,8 @@ export const baseTheme = {
     lightenSecondary: "#C35850",
     backgroundSecondary: "#53354A",
     disabled: "#999593",
+    success: "#4B994E",
+    error: "#CF0E0E",
   },
   typography: {
     h1: {

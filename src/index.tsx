@@ -1,8 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { About, Career, Contact, Error, Home } from "./pages";
+import { About, Career, Contact, Home } from "./pages";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { App } from "./components/App";
+import { App, Error } from "./components/App";
 
 export const routes = [
   {

@@ -9,20 +9,38 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
-export type NavigationMenuItemProps = { label: string; to: string };
+export type NavigationMenuItemProps = {
+  label: string;
+  to: string;
+};
 
 export const NavigationMenuItem = React.forwardRef<
   HTMLLIElement,
   NavigationMenuItemProps
 >((props, ref) => {
   const { label, to, ...other } = props;
+  const location = useLocation();
+
   const iconMap: Record<string, IconDefinition> = {
     Home: faHouse,
     About: faAddressCard,
     Career: faClipboardList,
     Contact: faEnvelope,
   };
+
+  const checkIfActive = (pathname: string) =>
+    label === "Home" ? pathname === to : pathname === `/${to}`;
+
+  const [isActive, setIsActive] = React.useState(
+    checkIfActive(location.pathname)
+  );
+
+  React.useEffect(() => {
+    setIsActive(checkIfActive(location.pathname));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [location.pathname]);
 
   return (
     <ListBoxItem ref={ref}>
@@ -50,6 +68,7 @@ export const NavigationMenuItem = React.forwardRef<
             textDecoration: "underline",
           },
         }}
+        data-active={isActive ? true : undefined}
         {...other}
       >
         <FontAwesomeIcon

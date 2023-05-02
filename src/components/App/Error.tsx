@@ -1,5 +1,5 @@
 import React from "react";
-import { Flex, Image, ThemeProvider, Typography } from "../components";
+import { Flex, Image, ThemeProvider, Typography } from "..";
 import { useRouteError } from "react-router-dom";
 
 export function Error() {

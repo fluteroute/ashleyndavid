@@ -35,11 +35,7 @@ function NavigationMenu() {
           variant="none"
         >
           {routes.map(({ path, name }) => (
-            <NavigationMenuItem
-              label={name as string}
-              to={path}
-              data-active={location.pathname === path || undefined}
-            />
+            <NavigationMenuItem label={name as string} to={path} />
           ))}
         </ListBox>
       </Menu>
