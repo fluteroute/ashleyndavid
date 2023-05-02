@@ -13,7 +13,7 @@ export function About() {
       </Paragraph>
       <Grid
         gap={4}
-        columns={[1, 1, 1, '1fr 2fr']}
+        columns={[1, 1, 2, '1fr 2fr']}
         sx={{
           alignItems: 'center',
           justifyItems: 'center',
@@ -25,8 +25,8 @@ export function About() {
           src="hiking.jpeg"
           sx={{
             boxShadow: 'unset',
-            width: ['unset', 'unset', 'unset', '300px'],
-            height: ['100%', 'unset', 'unset', '300px'],
+            width: ['250px', '250px', '350px', '350px'],
+            height: ['250px', '250px', '350px', '350px'],
             objectFit: 'cover',
             borderRadius: '20px',
           }}
