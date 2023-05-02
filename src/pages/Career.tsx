@@ -6,7 +6,6 @@ import {
   ListBoxItem,
   ListBoxItemProps,
   Typography,
-  Paragraph,
 } from "../components";
 
 const CareerListBoxItem = ({
@@ -28,16 +27,6 @@ const CareerListBoxItem = ({
 export function Career() {
   return (
     <>
-      <Box sx={{ marginTop: "1em", marginBottom: "1em" }}>
-        <Typography variant="h2">Summary</Typography>
-      </Box>
-      <Paragraph>
-        Highly motivated and ambitious Software Engineer with experience in
-        building design systems, web applications, and automated test
-        frameworks. Interested in career growth in full stack development and
-        leadership. Experienced in working in Agile environments, including
-        Scrum Master duties on high-performance teams.
-      </Paragraph>
       <Box sx={{ marginTop: "1em", marginBottom: "1em" }}>
         <Typography variant="h2">Technologies</Typography>
       </Box>

@@ -5,6 +5,7 @@ export * from "./Divider";
 export * from "./Flex";
 export * from "./Grid";
 export * from "./IconButton";
+export * from "./Iframe";
 export * from "./Image";
 export * from "./ImageSpinner";
 export * from "./Link";

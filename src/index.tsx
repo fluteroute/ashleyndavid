@@ -1,8 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { About, Career, Contact, Home } from "./pages";
+import { About, Career, Contact, Error, Home } from "./pages";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { App } from "./App";
+import { App } from "./components/App";
 
 export const routes = [
   {
@@ -35,6 +35,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
+    errorElement: <Error />,
     children: routes.map((route) => ({
       index: route.path === "/",
       path: route.path === "/" ? undefined : route.path,

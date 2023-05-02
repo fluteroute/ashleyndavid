@@ -1,9 +1,9 @@
 import React from "react";
-import { Box, ThemeProvider } from "../components/base";
+import { Box, ThemeProvider } from "../base";
 import { CSSTransition, SwitchTransition } from "react-transition-group";
 import { useLocation, useOutlet } from "react-router-dom";
-import { Layout } from "../components";
-import { routes } from "..";
+import { Layout } from "..";
+import { routes } from "../..";
 
 function App() {
   const location = useLocation();
