@@ -256,7 +256,7 @@ export const theme = {
       color: '#F5F5F5',
       backgroundColor: 'backgroundSecondary',
       paddingTop: 46,
-      paddingBottom: [80, 80, 80, 46],
+      paddingBottom: [46, 80, 80, 46],
       paddingRight: [18, 18, 18, 46],
       paddingLeft: [18, 18, 18, 46],
       borderRadius: 80,

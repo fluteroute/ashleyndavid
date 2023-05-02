@@ -103,15 +103,19 @@ export function ContactForm() {
       <Flex
         sx={{
           flexDirection: 'row',
-          alignItems: 'center',
+          alignItems: 'start',
           justifyContent: 'space-between',
           flexWrap: 'wrap',
         }}
       >
-        <Box sx={{ marginLeft: 2, marginTop: 3, marginBottom: 3 }}>
-          <ReCAPTCHA ref={recaptchaRef} sitekey="6LcuGdIlAAAAAOPlwb_U_3zuYC8rP30TMs0TQkLX" />
+        <Box sx={{ marginLeft: 2, marginBottom: 3 }}>
+          <ReCAPTCHA
+            ref={recaptchaRef}
+            sitekey="6LcuGdIlAAAAAOPlwb_U_3zuYC8rP30TMs0TQkLX"
+            size="compact"
+          />
         </Box>
-        <Box>
+        <Box sx={{ marginBottom: 3 }}>
           <SubmitButton
             success={buttonState.success}
             failed={buttonState.failed}

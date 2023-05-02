@@ -48,7 +48,7 @@ export function Layout(props: LayoutProps) {
         flexDirection: 'column',
         height: '100vh',
         alignItems: 'center',
-        justifyContent: 'center',
+        justifyContent: ['space-between', 'center'],
         paddingTop: [0, 0, 0, 80],
         paddingBottom: 0,
         width: '100%',
@@ -76,12 +76,11 @@ export function Layout(props: LayoutProps) {
       <Flex
         sx={{
           flexDirection: ['column', 'column', 'column', 'row'],
-          padding: ['20px', '20px', '0px', '0px'],
-          marginTop: [-220, -220, -220, 0],
+          marginLeft: '20px',
+          paddingRight: '20px',
+          marginTop: [variant !== 'home' ? -190 : -215, -248, -248, 0],
           paddingBottom: [0, 0, 0, 80],
           maxWidth: ['unset', 'unset', 'unset', 1600],
-          minWidth: ['unset', 'unset', 'unset', 1200],
-          minHeight: ['unset', 'unset', 'unset', 928],
         }}
       >
         <Avatar variant={variant} />

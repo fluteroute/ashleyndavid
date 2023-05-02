@@ -16,9 +16,9 @@ export function SubmitButton(props: SubmitButtonProps) {
       disabled={success || undefined}
       type="submit"
       sx={{
-        marginLeft: 3,
-        width: 152,
-        height: 44,
+        marginLeft: 2,
+        minWidth: 152,
+        minHeight: 44,
         ...(success && {
           backgroundColor: 'success',
           '&:hover': {

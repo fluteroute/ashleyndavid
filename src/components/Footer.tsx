@@ -15,7 +15,7 @@ export function Footer() {
         flexWrap: 'wrap',
         paddingLeft: [0, 0, 0, '3em'],
         paddingRight: [0, 0, 0, '3em'],
-        margin: [3, 3, 3, 1],
+        margin: [1, 3, 3, 1],
       }}
     >
       <Box>

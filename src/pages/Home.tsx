@@ -119,6 +119,7 @@ export function Home() {
             flexDirection: 'row',
             justifyContent: ['center', 'space-evenly'],
             marginTop: 3,
+            flexWrap: 'wrap',
           }}
         >
           <Flex

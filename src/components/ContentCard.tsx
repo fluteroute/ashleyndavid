@@ -28,7 +28,7 @@ export function ContentCard(props: ContentCardProps) {
       <Box
         sx={{
           marginLeft: [0, 0, 0, variant !== 'home' ? 180 : 128],
-          marginTop: [160, 160, 160, 0],
+          marginTop: [variant !== 'home' ? 132 : 160, 160, 160, 0],
         }}
       >
         <Flex
@@ -49,9 +49,9 @@ export function ContentCard(props: ContentCardProps) {
         <Box
           className="content"
           sx={{
-            height: ['36vh', '36vh', '36vh', '58vh'],
+            height: [variant !== 'home' ? '36vh' : '34vh', '36vh', '36vh', '58vh'],
             overflowY: 'scroll',
-            paddingRight: [3, 3, 3, 40],
+            paddingRight: 3,
           }}
           {...other}
         >
