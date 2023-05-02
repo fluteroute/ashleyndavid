@@ -45,13 +45,14 @@ export function Layout(props: LayoutProps) {
           'linear-gradient(173deg, #1B1F3A 30%, #53354A 73.72%, #91403A 101.44%)',
           'linear-gradient(113.91deg, #1B1F3A 34.95%, #53354A 69.17%, #91403A 91.51%)',
         ],
-        flexDirection: 'column',
-        height: ['100%', '100%', '100%', '100vh'],
-        alignItems: 'center',
-        justifyContent: ['space-between', 'center'],
+        height: '100vh',
         paddingTop: [0, 0, 0, 80],
         paddingBottom: 0,
-        width: '100%',
+        width: '100vw',
+        overflow: 'scroll',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: ['space-between', 'center'],
 
         '.page-enter': {
           opacity: 0,
@@ -75,23 +76,32 @@ export function Layout(props: LayoutProps) {
     >
       <Flex
         sx={{
-          flexDirection: ['column', 'column', 'column', 'row'],
-          marginLeft: '20px',
-          paddingRight: '20px',
-          marginTop: [variant !== 'home' ? -190 : -215, -248, -248, 0],
-          paddingBottom: [0, 0, 0, 80],
-          maxWidth: ['unset', 'unset', 'unset', 1600],
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: ['space-between', 'center'],
         }}
       >
-        <Avatar variant={variant} />
-        <ContentCard
-          description={careerDescription || homeDescription}
-          variant={variant}
-          title={title}
-          {...other}
-        />
+        <Flex
+          sx={{
+            flexDirection: ['column', 'column', 'column', 'row'],
+            marginLeft: '20px',
+            paddingRight: '20px',
+            marginTop: [variant !== 'home' ? -190 : -215, -248, -248, 0],
+            paddingBottom: [0, 0, 0, 80],
+            maxWidth: ['unset', 'unset', 'unset', 1600],
+            height: ['100%', '100%', '100%', 'unset'],
+          }}
+        >
+          <Avatar variant={variant} />
+          <ContentCard
+            description={careerDescription || homeDescription}
+            variant={variant}
+            title={title}
+            {...other}
+          />
+        </Flex>
+        <Footer />
       </Flex>
-      <Footer />
     </Flex>
   );
 }

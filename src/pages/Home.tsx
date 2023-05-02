@@ -50,7 +50,9 @@ export function Home() {
           justifyContent: 'center',
           paddingTop: [0, 0, 0, 3],
           paddingBottom: [0, 0, 0, 3],
-          width: '100%',
+          width: [0, '100%'],
+          opacity: [0, 'unset'],
+          height: [0, '100%'],
         }}
       >
         <Iframe
@@ -116,10 +118,9 @@ export function Home() {
         sure to visit her other pages:
         <Flex
           sx={{
-            flexDirection: 'row',
+            flexDirection: ['column', 'row'],
             justifyContent: ['center', 'space-evenly'],
             marginTop: 3,
-            flexWrap: 'wrap',
           }}
         >
           <Flex

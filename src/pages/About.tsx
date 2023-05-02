@@ -25,8 +25,8 @@ export function About() {
           src="hiking.jpeg"
           sx={{
             boxShadow: 'unset',
-            width: ['250px', '250px', '300px', '300px'],
-            height: ['250px', '250px', '300px', '300px'],
+            width: ['unset', 'unset', 'unset', '300px'],
+            height: ['100%', 'unset', 'unset', '300px'],
             objectFit: 'cover',
             borderRadius: '20px',
           }}
