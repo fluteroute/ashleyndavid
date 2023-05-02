@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, ListBoxItem } from '../base';
+import { Button, Flex, ListBoxItem } from '../base';
 import {
   IconDefinition,
   faAddressCard,
@@ -67,8 +67,15 @@ export const NavigationMenuItem = React.forwardRef<HTMLLIElement, NavigationMenu
           data-active={isActive ? true : undefined}
           {...other}
         >
-          <FontAwesomeIcon icon={iconMap[label]} style={{ marginRight: '12px' }} />
-          {label}
+          <Flex
+            sx={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}
+          >
+            {label}
+            <FontAwesomeIcon
+              icon={iconMap[label]}
+              style={{ marginLeft: '16px', marginRight: '8px' }}
+            />
+          </Flex>
         </Button>
       </ListBoxItem>
     );
