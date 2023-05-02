@@ -17,12 +17,6 @@ export function ContentCard(props: ContentCardProps) {
 
   // Scroll to the top when route changes
   React.useEffect(() => {
-    // Mobile
-    window?.scrollTo({
-      top: 0,
-      left: 0,
-    });
-
     // Desktop
     document.getElementsByClassName('content')[0]?.scrollTo({
       top: 0,

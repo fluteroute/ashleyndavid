@@ -29,7 +29,7 @@ function Avatar(props: AvatarProps) {
               minWidth: ['unset', 'unset', 280, 280],
             }
           : {
-              top: ['15em', '15em', '15em', '5em'],
+              top: ['15em', '15em', '17em', '5em'],
               left: ['none', 'none', 'none', '6em'],
               maxWidth: [220, 280, 280, 554],
               minWidth: ['unset', 'unset', 280, 448],

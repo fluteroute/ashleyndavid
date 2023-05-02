@@ -35,6 +35,15 @@ export function Layout(props: LayoutProps) {
 
   const variant = location.pathname !== '/' ? 'main' : 'home';
 
+  // Scroll to the top when route changes
+  React.useEffect(() => {
+    // Mobile
+    document.getElementsByClassName('App')[0]?.scrollTo({
+      top: 0,
+      left: 0,
+    });
+  }, [location.pathname]);
+
   return (
     <Flex
       className="App"
@@ -52,7 +61,7 @@ export function Layout(props: LayoutProps) {
         overflow: 'scroll',
         flexDirection: 'column',
         alignItems: 'center',
-        justifyContent: ['space-between', 'center'],
+        justifyContent: ['space-between', 'space-between', 'space-between', 'center'],
 
         '.page-enter': {
           opacity: 0,
@@ -78,7 +87,7 @@ export function Layout(props: LayoutProps) {
         sx={{
           flexDirection: 'column',
           alignItems: 'center',
-          justifyContent: ['space-between', 'center'],
+          justifyContent: ['space-between', 'space-between', 'space-between', 'center'],
         }}
       >
         <Flex
@@ -86,7 +95,12 @@ export function Layout(props: LayoutProps) {
             flexDirection: ['column', 'column', 'column', 'row'],
             marginLeft: '20px',
             paddingRight: '20px',
-            marginTop: [variant !== 'home' ? -190 : -215, -248, -248, 0],
+            marginTop: [
+              variant !== 'home' ? -190 : -215,
+              variant !== 'home' ? -200 : -222,
+              -248,
+              0,
+            ],
             paddingBottom: [0, 0, 0, 80],
             maxWidth: ['unset', 'unset', 'unset', 1600],
             height: ['100%', '100%', '100%', 'unset'],
