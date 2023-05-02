@@ -1,50 +1,48 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import { About, Career, Contact, Home } from "./pages";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { App, Error } from "./components/App";
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import { About, Career, Contact, Home } from './pages';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { App, Error } from './components/App';
 
 export const routes = [
   {
-    path: "/",
+    path: '/',
     element: <Home />,
-    name: "Home",
+    name: 'Home',
     nodeRef: React.createRef<HTMLDivElement>(),
   },
   {
-    path: "about",
+    path: 'about',
     element: <About />,
-    name: "About",
+    name: 'About',
     nodeRef: React.createRef<HTMLDivElement>(),
   },
   {
-    path: "career",
+    path: 'career',
     element: <Career />,
-    name: "Career",
+    name: 'Career',
     nodeRef: React.createRef<HTMLDivElement>(),
   },
   {
-    path: "contact",
+    path: 'contact',
     element: <Contact />,
-    name: "Contact",
+    name: 'Contact',
     nodeRef: React.createRef<HTMLDivElement>(),
   },
 ];
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: '/',
     element: <App />,
     errorElement: <Error />,
     children: routes.map((route) => ({
-      index: route.path === "/",
-      path: route.path === "/" ? undefined : route.path,
+      index: route.path === '/',
+      path: route.path === '/' ? undefined : route.path,
       element: route.element,
     })),
   },
 ]);
 
-const root = ReactDOM.createRoot(
-  document.getElementById("root") as HTMLElement
-);
+const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 root.render(<RouterProvider router={router} />);

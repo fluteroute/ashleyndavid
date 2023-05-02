@@ -1,14 +1,14 @@
-import React from "react";
-import { Box, Card, Flex, Typography } from "./base";
-import NavigationMenu from "./NavigationMenu/NavigationMenu";
-import { useLocation } from "react-router-dom";
-import { Divider } from "theme-ui";
+import React from 'react';
+import { Box, Card, Flex, Typography } from './base';
+import NavigationMenu from './NavigationMenu/NavigationMenu';
+import { useLocation } from 'react-router-dom';
+import { Divider } from 'theme-ui';
 
 export type ContentCardProps = {
   children: React.ReactNode;
   title: string;
   description?: React.ReactNode;
-  variant: "main" | "home";
+  variant: 'main' | 'home';
 };
 
 export function ContentCard(props: ContentCardProps) {
@@ -17,7 +17,7 @@ export function ContentCard(props: ContentCardProps) {
 
   // Scroll to the top when route changes
   React.useEffect(() => {
-    document.getElementsByClassName("content")[0]?.scrollTo({
+    document.getElementsByClassName('content')[0]?.scrollTo({
       top: 0,
       left: 0,
     });
@@ -27,15 +27,15 @@ export function ContentCard(props: ContentCardProps) {
     <Card>
       <Box
         sx={{
-          marginLeft: [0, 0, 0, variant !== "home" ? 180 : 128],
+          marginLeft: [0, 0, 0, variant !== 'home' ? 180 : 128],
           marginTop: [160, 160, 160, 0],
         }}
       >
         <Flex
           sx={{
-            flexDirection: "row",
-            alignItems: "center",
-            justifyContent: "space-between",
+            flexDirection: 'row',
+            alignItems: 'center',
+            justifyContent: 'space-between',
           }}
         >
           <Box>
@@ -49,8 +49,8 @@ export function ContentCard(props: ContentCardProps) {
         <Box
           className="content"
           sx={{
-            height: ["36vh", "36vh", "36vh", "58vh"],
-            overflowY: "scroll",
+            height: ['36vh', '36vh', '36vh', '58vh'],
+            overflowY: 'scroll',
             paddingRight: [3, 3, 3, 40],
           }}
           {...other}
@@ -59,9 +59,9 @@ export function ContentCard(props: ContentCardProps) {
             <Typography
               variant="body2"
               sx={{
-                fontStyle: "italic",
-                fontSize: ["12px", "inherit"],
-                lineHeight: ["12px", "inherit"],
+                fontStyle: 'italic',
+                fontSize: ['12px', 'inherit'],
+                lineHeight: ['12px', 'inherit'],
               }}
             >
               {description}

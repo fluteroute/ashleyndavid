@@ -1,8 +1,8 @@
-import React from "react";
-import { Input, InputProps } from "theme-ui";
-import { Typography } from "./Typography";
-import { v4 as uuidv4 } from "uuid";
-import { Box } from ".";
+import React from 'react';
+import { Input, InputProps } from 'theme-ui';
+import { Typography } from './Typography';
+import { v4 as uuidv4 } from 'uuid';
+import { Box } from '.';
 
 export interface TextFieldProps extends InputProps {
   label?: string;
@@ -15,10 +15,7 @@ export interface TextFieldProps extends InputProps {
  * Primary UI component for user interaction
  */
 export const TextField = React.forwardRef<HTMLInputElement, TextFieldProps>(
-  (
-    { isDisabled, isRequired = false, label, onChange, placeholder, ...props },
-    ref
-  ) => {
+  ({ isDisabled, isRequired = false, label, onChange, placeholder, ...props }, ref) => {
     const labelId = uuidv4();
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
       if (isDisabled || !onChange) return;
@@ -33,10 +30,10 @@ export const TextField = React.forwardRef<HTMLInputElement, TextFieldProps>(
             as="label"
             id={labelId}
             variant="label"
-            sx={{ color: "textPrimary", marginLeft: "6px" }}
+            sx={{ color: 'textPrimary', marginLeft: '6px' }}
           >
             {label}
-            {isRequired && "*"}
+            {isRequired && '*'}
           </Typography>
         )}
         <Input
@@ -54,6 +51,6 @@ export const TextField = React.forwardRef<HTMLInputElement, TextFieldProps>(
   }
 );
 
-TextField.displayName = "TextField";
+TextField.displayName = 'TextField';
 
 export default TextField;

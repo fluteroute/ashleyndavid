@@ -1,15 +1,14 @@
-import React from "react";
-import { Box, ThemeProvider } from "../base";
-import { CSSTransition, SwitchTransition } from "react-transition-group";
-import { useLocation, useOutlet } from "react-router-dom";
-import { Layout } from "..";
-import { routes } from "../..";
+import React from 'react';
+import { Box, ThemeProvider } from '../base';
+import { CSSTransition, SwitchTransition } from 'react-transition-group';
+import { useLocation, useOutlet } from 'react-router-dom';
+import { Layout } from '..';
+import { routes } from '../..';
 
 function App() {
   const location = useLocation();
   const currentOutlet = useOutlet();
-  const { nodeRef } =
-    routes.find((route) => route.path === location.pathname) ?? {};
+  const { nodeRef } = routes.find((route) => route.path === location.pathname) ?? {};
 
   return (
     <ThemeProvider>

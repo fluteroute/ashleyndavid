@@ -1,8 +1,8 @@
-import React from "react";
-import { Textarea, TextareaProps } from "theme-ui";
-import { Typography } from "./Typography";
-import { v4 as uuidv4 } from "uuid";
-import { Box } from ".";
+import React from 'react';
+import { Textarea, TextareaProps } from 'theme-ui';
+import { Typography } from './Typography';
+import { v4 as uuidv4 } from 'uuid';
+import { Box } from '.';
 
 export interface TextAreaProps extends TextareaProps {
   label?: string;
@@ -15,18 +15,7 @@ export interface TextAreaProps extends TextareaProps {
  * Primary UI component for user interaction
  */
 export const TextArea = React.forwardRef<HTMLTextAreaElement, TextAreaProps>(
-  (
-    {
-      isDisabled,
-      isRequired = false,
-      label,
-      onChange,
-      placeholder,
-      rows = 8,
-      ...props
-    },
-    ref
-  ) => {
+  ({ isDisabled, isRequired = false, label, onChange, placeholder, rows = 8, ...props }, ref) => {
     const labelId = uuidv4();
     const handleChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
       if (isDisabled || !onChange) return;
@@ -41,10 +30,10 @@ export const TextArea = React.forwardRef<HTMLTextAreaElement, TextAreaProps>(
             as="label"
             id={labelId}
             variant="label"
-            sx={{ color: "textPrimary", marginLeft: "6px" }}
+            sx={{ color: 'textPrimary', marginLeft: '6px' }}
           >
             {label}
-            {isRequired && "*"}
+            {isRequired && '*'}
           </Typography>
         )}
         <Textarea
@@ -63,6 +52,6 @@ export const TextArea = React.forwardRef<HTMLTextAreaElement, TextAreaProps>(
   }
 );
 
-TextArea.displayName = "TextArea";
+TextArea.displayName = 'TextArea';
 
 export default TextArea;

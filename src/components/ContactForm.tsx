@@ -1,7 +1,7 @@
-import React from "react";
-import { Box, Flex, TextField, TextArea, SubmitButton } from "./";
-import axios from "axios";
-import ReCAPTCHA from "react-google-recaptcha";
+import React from 'react';
+import { Box, Flex, TextField, TextArea, SubmitButton } from './';
+import axios from 'axios';
+import ReCAPTCHA from 'react-google-recaptcha';
 
 export function ContactForm() {
   const recaptchaRef = React.createRef<ReCAPTCHA>();
@@ -11,9 +11,9 @@ export function ContactForm() {
     isLoading: false,
   });
   const [inputs, setInputs] = React.useState({
-    email: "",
-    subject: "",
-    message: "",
+    email: '',
+    subject: '',
+    message: '',
   });
 
   const handleOnChange = (event: {
@@ -39,11 +39,11 @@ export function ContactForm() {
     try {
       const token = recaptchaRef?.current?.getValue();
       const response = await axios({
-        method: "POST",
-        url: "https://formbold.com/s/oaPkK",
+        method: 'POST',
+        url: 'https://formbold.com/s/oaPkK',
         data: {
           ...inputs,
-          "g-recaptcha-response": token,
+          'g-recaptcha-response': token,
         },
       });
 
@@ -54,9 +54,9 @@ export function ContactForm() {
           isLoading: false,
         });
         setInputs({
-          email: "",
-          subject: "",
-          message: "",
+          email: '',
+          subject: '',
+          message: '',
         });
       }
     } catch (error) {
@@ -102,17 +102,14 @@ export function ContactForm() {
       />
       <Flex
         sx={{
-          flexDirection: "row",
-          alignItems: "center",
-          justifyContent: "space-between",
-          flexWrap: "wrap",
+          flexDirection: 'row',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          flexWrap: 'wrap',
         }}
       >
         <Box sx={{ marginLeft: 2, marginTop: 3, marginBottom: 3 }}>
-          <ReCAPTCHA
-            ref={recaptchaRef}
-            sitekey="6LcuGdIlAAAAAOPlwb_U_3zuYC8rP30TMs0TQkLX"
-          />
+          <ReCAPTCHA ref={recaptchaRef} sitekey="6LcuGdIlAAAAAOPlwb_U_3zuYC8rP30TMs0TQkLX" />
         </Box>
         <Box>
           <SubmitButton

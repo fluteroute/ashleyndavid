@@ -1,12 +1,9 @@
-import React from "react";
-import {
-  Button as ThemeUIButton,
-  ButtonProps as ThemeUIButtonProps,
-} from "theme-ui";
+import React from 'react';
+import { Button as ThemeUIButton, ButtonProps as ThemeUIButtonProps } from 'theme-ui';
 
 export interface ButtonProps extends ThemeUIButtonProps {
   isDisabled?: boolean;
-  variant?: "primary" | "primaryOutline" | "secondary" | "secondaryOutline";
+  variant?: 'primary' | 'primaryOutline' | 'secondary' | 'secondaryOutline';
   onClick?: () => void;
 }
 
@@ -14,16 +11,14 @@ export interface ButtonProps extends ThemeUIButtonProps {
  * Primary UI component for user interaction
  */
 export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ children, isDisabled, onClick, variant = "primary", ...props }, ref) => {
+  ({ children, isDisabled, onClick, variant = 'primary', ...props }, ref) => {
     const handleClick = () => {
       if (isDisabled || !onClick) return;
 
       onClick();
     };
 
-    const disabledVariant = variant.includes("Outline")
-      ? "disabledOutline"
-      : "disabled";
+    const disabledVariant = variant.includes('Outline') ? 'disabledOutline' : 'disabled';
 
     return (
       <ThemeUIButton
@@ -39,6 +34,6 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   }
 );
 
-Button.displayName = "Button";
+Button.displayName = 'Button';
 
 export default Button;

@@ -1,6 +1,6 @@
-import React from "react";
-import { ThemeProvider as ThemeUIProvider, useThemeUI } from "theme-ui";
-import { theme as ashleyndavidTheme } from "../../utils/theme";
+import React from 'react';
+import { ThemeProvider as ThemeUIProvider, useThemeUI } from 'theme-ui';
+import { theme as ashleyndavidTheme } from '../../utils/theme';
 
 export interface ThemeProviderProps {
   children?: React.ReactNode;
@@ -13,9 +13,8 @@ export function ThemeProvider(props: ThemeProviderProps) {
   return <ThemeUIProvider theme={theme}>{children}</ThemeUIProvider>;
 }
 
-ThemeProvider.displayName = "ThemeProvider";
+ThemeProvider.displayName = 'ThemeProvider';
 
 export default ThemeProvider;
 
-export const useTheme = () =>
-  useThemeUI() as unknown as { theme: typeof ashleyndavidTheme };
+export const useTheme = () => useThemeUI() as unknown as { theme: typeof ashleyndavidTheme };
