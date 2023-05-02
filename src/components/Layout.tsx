@@ -46,7 +46,7 @@ export function Layout(props: LayoutProps) {
           'linear-gradient(113.91deg, #1B1F3A 34.95%, #53354A 69.17%, #91403A 91.51%)',
         ],
         flexDirection: 'column',
-        height: '100vh',
+        height: ['100%', '100%', '100%', '100vh'],
         alignItems: 'center',
         justifyContent: ['space-between', 'center'],
         paddingTop: [0, 0, 0, 80],

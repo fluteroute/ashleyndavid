@@ -17,6 +17,13 @@ export function ContentCard(props: ContentCardProps) {
 
   // Scroll to the top when route changes
   React.useEffect(() => {
+    // Mobile
+    window?.scrollTo({
+      top: 0,
+      left: 0,
+    });
+
+    // Desktop
     document.getElementsByClassName('content')[0]?.scrollTo({
       top: 0,
       left: 0,
@@ -49,7 +56,7 @@ export function ContentCard(props: ContentCardProps) {
         <Box
           className="content"
           sx={{
-            height: [variant !== 'home' ? '36vh' : '34vh', '36vh', '36vh', '58vh'],
+            height: ['100%', '100%', '100%', '58vh'],
             overflowY: 'scroll',
             paddingRight: 3,
           }}
