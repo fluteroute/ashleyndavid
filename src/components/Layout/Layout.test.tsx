@@ -36,9 +36,9 @@ test('[components] Layout: should render for career path', () => {
   commonContentOnLayout();
 });
 
-// test('[components] Layout: should render for contact path', () => {
-//   render(<Layout title="Contact">content</Layout>);
+test('[components] Layout: should render for contact path', () => {
+  render(<Layout title="Contact">content</Layout>);
 
-//   expect(screen.getByText('Contact')).toBeDefined();
-//   commonContentOnLayout();
-// });
+  expect(screen.getByText('Contact')).toBeDefined();
+  commonContentOnLayout();
+});
