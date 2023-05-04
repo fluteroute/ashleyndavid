@@ -55,11 +55,6 @@
     "eslint": "eslint src/**",
     "type": "tsc --noEmit"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "yarn lint-staged && yarn format"
-    }
-  },
   "lint-staged": {
     "*.ts": [
       "yarn eslint",
@@ -70,6 +65,11 @@
       "yarn type"
     ],
     "*.*": "yarn formate"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn lint-staged && yarn format"
+    }
   },
   "browserslist": [
     ">0.2%",
