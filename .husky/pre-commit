@@ -3,4 +3,4 @@
 
 yarn lint-staged
 yarn type
-yarn format
+npx pretty-quick --staged
