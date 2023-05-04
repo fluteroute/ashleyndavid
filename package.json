@@ -43,8 +43,7 @@
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-promise": "^6.0.0",
     "eslint-plugin-react": "^7.31.11",
-    "husky": "^8.0.3",
-    "pinst": "^3.0.0",
+    "husky": "^8.0.0",
     "prettier": "2.8.1"
   },
   "scripts": {
@@ -55,7 +54,7 @@
     "format": "prettier --write .",
     "eslint": "eslint src/**",
     "type": "tsc --noEmit",
-    "postinstall": "husky install"
+    "prepare": "husky install"
   },
   "lint-staged": {
     "*.ts": [
@@ -66,7 +65,7 @@
       "yarn eslint",
       "yarn type"
     ],
-    "*.*": "yarn formate"
+    "*.*": "yarn format"
   },
   "husky": {
     "hooks": {
