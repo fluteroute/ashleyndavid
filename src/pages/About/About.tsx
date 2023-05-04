@@ -87,8 +87,9 @@ export function About() {
                 }}
               />
               <ListBoxItem>
-                Hiking: My love for the outdoors has led me to explore numerous national parks,
-                including Yosemite, Olympic, Mt. Rainier, North Cascades, and the Smoky Mountains.
+                Hiking: My love for the outdoors has led me to explore numerous national and state
+                parks, including Yosemite, Olympic, Mt. Rainier, North Cascades, and the Great Smoky
+                Mountains.
                 {
                   " To further fuel this passion, I'm excited to be relocating to the Pacific Northwest "
                 }
