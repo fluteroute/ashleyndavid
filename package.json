@@ -49,7 +49,9 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "GENERATE_SOURCEMAP=false react-scripts build",
-    "test": "react-scripts test",
+    "build:test": "react-scripts build",
+    "test:jest": "react-scripts test",
+    "test": "yarn build:test && yarn test:jest",
     "eject": "react-scripts eject",
     "format": "prettier --write .",
     "eslint": "eslint src/**",
@@ -68,6 +70,11 @@
     "hooks": {
       "pre-commit": "yarn lint-staged"
     }
+  },
+  "jest": {
+    "transformIgnorePatterns": [
+      "node_modules/(?!axios)/"
+    ]
   },
   "browserslist": [
     ">0.2%",

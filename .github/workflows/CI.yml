@@ -20,9 +20,10 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-          cache: yarn
       - name: Install dependencies
         run: yarn install --immutable
+      - name: Build
+        run: yarn build --if-present
       - name: Run tests
         run: yarn test
       - name: EsLint
