@@ -52,7 +52,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "format": "prettier --write .",
-    "eslint": "eslint src/**"
+    "eslint": "eslint src/**",
+    "type": "tsc --noEmit"
   },
   "husky": {
     "hooks": {
@@ -60,8 +61,15 @@
     }
   },
   "lint-staged": {
-    "*.ts": "yarn eslint",
-    "*.tsx": "yarn eslint"
+    "*.ts": [
+      "yarn eslint",
+      "yarn type"
+    ],
+    "*.tsx": [
+      "yarn eslint",
+      "yarn type"
+    ],
+    "*.*": "yarn formate"
   },
   "browserslist": [
     ">0.2%",
