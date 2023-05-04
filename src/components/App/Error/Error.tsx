@@ -41,6 +41,4 @@ export function Error() {
   );
 }
 
-Error.displayName = 'ErrorPage';
-
 export default Error;

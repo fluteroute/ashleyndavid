@@ -36,15 +36,15 @@ export function About() {
           professional flutist by majoring in music. After three years, I reevaluated my career path
           and decided to venture into the technology industry. Upon consulting with industry
           professionals, Quality Assurance (QA) seemed like an ideal starting point. To transition
-          into the tech industry quickly, I landed a QA internship while finishing and changed my
-          major to Psychology. As I gained more experience in QA, I recognized the potential of
-          automation in testing. I taught myself Python and computer science basics, subsequently
-          using my newfound skills to script automated tests with Selenium WebDriver as a full-time
-          QA Analyst. Collaborating closely with software engineers, I absorbed valuable coding
+          into the tech industry quickly, I landed a QA internship while finishing my degree in
+          Psychology. As I gained more experience in QA, I recognized the potential of automation in
+          testing. I taught myself Python and computer science basics, subsequently using my
+          newfound skills to script automated tests with Selenium WebDriver as a full-time QA
+          Analyst. Collaborating closely with software engineers, I absorbed valuable coding
           expertise and decided to change my career path once more. As a software engineer, I have
-          created design systems, web applications, and automated test frameworks. Now, with
-          experience in several programming languages, I am passionate about providing high quality
-          full-stack solutions. Please visit the{' '}
+          created design systems, web applications, development tools, and automated test
+          frameworks. Now, with experience in several programming languages, I am passionate about
+          providing high quality full-stack solutions. Please visit the{' '}
           <NavigationLink to="/career">Career</NavigationLink> page for more in depth details on my
           professional experience.
         </Paragraph>
