@@ -48,16 +48,16 @@
     "pretty-quick": "^3.1.3"
   },
   "scripts": {
-    "start": "react-scripts start",
     "build": "GENERATE_SOURCEMAP=false react-scripts build",
-    "build:test": "react-scripts build",
-    "test:jest": "react-scripts test",
-    "test": "yarn build:test && yarn test:jest",
     "eject": "react-scripts eject",
-    "format": "prettier --write .",
     "eslint": "eslint src/**",
-    "type": "tsc --noEmit",
-    "prepare": "husky install"
+    "format": "prettier --write .",
+    "prepare": "husky install",
+    "start": "react-scripts start",
+    "test:build": "react-scripts build",
+    "test:jest": "react-scripts test",
+    "test": "yarn test:build && yarn test:jest",
+    "type": "tsc --noEmit"
   },
   "lint-staged": {
     "*.ts": [
