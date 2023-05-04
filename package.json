@@ -58,14 +58,11 @@
   },
   "lint-staged": {
     "*.ts": [
-      "yarn eslint",
-      "yarn type"
+      "yarn eslint"
     ],
     "*.tsx": [
-      "yarn eslint",
-      "yarn type"
-    ],
-    "*.*": "yarn format"
+      "yarn eslint"
+    ]
   },
   "husky": {
     "hooks": {
