@@ -52,12 +52,6 @@
     "format": "prettier --write .",
     "eslint": "eslint src/**"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
   "browserslist": [
     ">0.2%",
     "not dead",

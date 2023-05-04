@@ -15,5 +15,10 @@
   "plugins": ["react", "prettier", "@typescript-eslint"],
   "rules": {
     "prettier/prettier": "error"
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
   }
 }
