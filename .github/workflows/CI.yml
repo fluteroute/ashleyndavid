@@ -22,10 +22,10 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: yarn
       - name: Install dependencies
-          run: yarn install --immutable
+        run: yarn install --immutable
       - name: Run tests
-          run: yarn test
+        run: yarn test
       - name: EsLint
-          run: yarn eslint
+        run: yarn eslint
       - name: Check types
-          run: yarn type
+        run: yarn type
