@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Flex, Typography } from '..';
+import { Box, Flex, Typography } from '../base';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRightLong, faLocationDot, faLocationPin } from '@fortawesome/free-solid-svg-icons';
 import { Florida, Washington } from './';

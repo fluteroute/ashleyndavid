@@ -172,7 +172,12 @@ export const theme = {
         color: '#FFFFFF',
       },
       '&:focus, :focus-visible': {
-        outline: 'primary',
+        outline: 'unset',
+        backgroundImage: `linear-gradient(to left, ${
+          baseTheme.colors.lightenPrimary
+        }, ${'primary'})`,
+        backgroundColor: baseTheme.colors.lightenPrimary,
+        boxShadow: `0px 0px 2px 4px ${baseTheme.colors.darkenPrimary}`,
       },
     },
     primaryOutline: {
@@ -189,7 +194,7 @@ export const theme = {
       },
       '&:focus, :focus-visible': {
         borderColor: baseTheme.colors.lightenPrimary,
-        outline: 'primary',
+        outline: 'unset',
       },
       borderColor: 'primary',
     },
@@ -211,6 +216,7 @@ export const theme = {
         backgroundImage: `linear-gradient(to left, ${baseTheme.colors.lightenSecondary}, ${baseTheme.colors.secondary})`,
         backgroundColor: 'lightenSecondary',
         color: '#FFFFFF',
+        boxShadow: `0px 0px 2px 4px ${baseTheme.colors.darkenSecondary}`,
       },
     },
     secondaryOutline: {
@@ -245,7 +251,8 @@ export const theme = {
       },
       '&:focus, :focus-visible': {
         backgroundColor: 'rgb(0, 0, 0, 0.5)',
-        outline: 'secondary',
+        outline: 'unset',
+        boxShadow: `0px 0px 2px 4px ${baseTheme.colors.darkenPrimary}`,
       },
       borderColor: 'transparent',
     },

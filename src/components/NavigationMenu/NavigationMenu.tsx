@@ -1,12 +1,12 @@
 import React from 'react';
 import { Box, ListBox, Menu } from '../base';
 import { NavigationMenuItem } from './';
-import { routes } from '../../index';
+import { routes } from '../../';
 import { useLocation } from 'react-router-dom';
 
-function NavigationMenu() {
-  const location = useLocation();
+export function NavigationMenu() {
   const [open, setOpen] = React.useState(false);
+  const location = useLocation();
 
   React.useEffect(() => {
     open && setOpen(!open);
