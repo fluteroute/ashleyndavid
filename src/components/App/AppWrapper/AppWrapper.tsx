@@ -25,5 +25,4 @@ export function AppWrapper(props: FlexProps) {
   );
 }
 
-AppWrapper.displayName = 'AppWrapper';
 export default AppWrapper;
