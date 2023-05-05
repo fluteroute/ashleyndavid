@@ -1,8 +1,17 @@
 import React from 'react';
 import { Grid, Image, Link, ListBox, ListBoxItem } from '../../components/base';
 import { NavigationLink, Paragraph } from '../../components';
+import { ThemeUIStyleObject } from 'theme-ui';
 
 export function About() {
+  const imageSx: ThemeUIStyleObject = {
+    boxShadow: 'unset',
+    width: ['250px', '250px', '250px', '350px'],
+    height: ['250px', '250px', '250px', '350px'],
+    objectFit: 'cover',
+    borderRadius: '20px',
+  };
+
   return (
     <>
       <Paragraph>
@@ -77,13 +86,9 @@ export function About() {
                 alt="Ashley playing flute"
                 src="flute.jpg"
                 sx={{
-                  boxShadow: 'unset',
-                  width: ['250px', '250px', '250px', '350px'],
-                  height: ['250px', '250px', '250px', '350px'],
-                  objectFit: 'cover',
-                  borderRadius: '20px',
                   gridRowStart: [2, 2, 1, 1],
                   gridRowEnd: [2, 2, 1, 1],
+                  ...imageSx,
                 }}
               />
               <ListBoxItem>
@@ -99,13 +104,9 @@ export function About() {
                 alt="kayaking"
                 src="kayak.jpeg"
                 sx={{
-                  boxShadow: 'unset',
-                  width: ['250px', '250px', '250px', '350px'],
-                  height: ['250px', '250px', '250px', '350px'],
-                  objectFit: 'cover',
-                  borderRadius: '20px',
                   gridRowStart: [4, 4, 1, 1],
                   gridRowEnd: [4, 4, 1, 1],
+                  ...imageSx,
                 }}
               />
               <ListBoxItem>
@@ -117,13 +118,9 @@ export function About() {
                 alt="EPCOT"
                 src="EPCOT.jpeg"
                 sx={{
-                  boxShadow: 'unset',
-                  width: ['250px', '250px', '250px', '350px'],
-                  height: ['250px', '250px', '250px', '350px'],
-                  objectFit: 'cover',
-                  borderRadius: '20px',
                   gridRowStart: [6, 6, 1, 1],
                   gridRowEnd: [6, 6, 1, 1],
+                  ...imageSx,
                 }}
               />
             </Grid>
