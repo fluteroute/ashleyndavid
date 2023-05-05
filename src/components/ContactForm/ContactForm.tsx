@@ -13,9 +13,7 @@ type InputsState = {
 export function ContactForm() {
   const recaptchaRef = React.createRef<ReCAPTCHA>();
 
-  const [buttonState, setButtonState] = React.useState<SubmitButtonStates>(
-    SubmitButtonStates.Default
-  );
+  const [buttonState, setButtonState] = React.useState(SubmitButtonStates.Default);
   const [isLoading, setIsLoading] = React.useState(false);
   const [inputs, setInputs] = React.useState<InputsState>({
     email: '',
