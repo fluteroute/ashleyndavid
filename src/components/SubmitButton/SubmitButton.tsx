@@ -3,14 +3,23 @@ import { Button, ButtonProps, Spinner } from '../base';
 import { faCheck } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
+export enum SubmitButtonStates {
+  Success = 'success',
+  Failed = 'failed',
+  Default = 'default',
+}
+
 export type SubmitButtonProps = ButtonProps & {
-  success: boolean;
-  failed: boolean;
-  isLoading: boolean;
+  isLoading?: boolean;
+  state?: SubmitButtonStates;
 };
 
 export function SubmitButton(props: SubmitButtonProps) {
-  const { success, failed, isLoading, ...other } = props;
+  const { isLoading = false, state = SubmitButtonStates.Default, ...other } = props;
+
+  const success = state === SubmitButtonStates.Success;
+  const failed = state === SubmitButtonStates.Failed;
+
   return (
     <Button
       disabled={success || undefined}
@@ -24,11 +33,19 @@ export function SubmitButton(props: SubmitButtonProps) {
           '&:hover': {
             backgroundColor: 'success',
           },
+          '&:focus, :focus-visible': {
+            backgroundColor: 'success',
+          },
         }),
         ...(failed && {
           backgroundColor: 'error',
+
           '&:hover': {
             backgroundColor: '#BA0E0E',
+          },
+          '&:focus, :focus-visible': {
+            backgroundColor: 'error',
+            boxShadow: '0px 0px 2px 4px #BA0E0E',
           },
         }),
       }}

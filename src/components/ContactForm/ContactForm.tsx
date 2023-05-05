@@ -1,18 +1,21 @@
 import React from 'react';
 import { Box, Flex, TextField, TextArea } from '../base';
-import axios from 'axios';
+import { SubmitButton, SubmitButtonStates } from '../SubmitButton';
+import { formRequest } from './utils';
 import ReCAPTCHA from 'react-google-recaptcha';
-import { SubmitButton } from '../SubmitButton';
+
+type InputsState = {
+  email: string;
+  subject: string;
+  message: string;
+};
 
 export function ContactForm() {
   const recaptchaRef = React.createRef<ReCAPTCHA>();
 
-  const [buttonState, setButtonState] = React.useState({
-    success: false,
-    failed: false,
-    isLoading: false,
-  });
-  const [inputs, setInputs] = React.useState({
+  const [buttonState, setButtonState] = React.useState(SubmitButtonStates.Default);
+  const [isLoading, setIsLoading] = React.useState(false);
+  const [inputs, setInputs] = React.useState<InputsState>({
     email: '',
     subject: '',
     message: '',
@@ -23,61 +26,34 @@ export function ContactForm() {
     target: { id: string; value: string };
   }) => {
     event.persist();
-    setInputs((prev: { email: string; subject: string; message: string }) => ({
+    setInputs((prev: InputsState) => ({
       ...prev,
       [event.target.id]: event.target.value,
     }));
   };
 
+  const onError = () => setButtonState(SubmitButtonStates.Failed);
+  const onSuccess = () => {
+    setButtonState(SubmitButtonStates.Success);
+
+    // Reset form
+    setInputs({
+      email: '',
+      subject: '',
+      message: '',
+    });
+    recaptchaRef.current?.reset();
+  };
+
   const handleOnSubmit = async (event: { preventDefault: () => void }) => {
+    setIsLoading(true);
+
     event.preventDefault();
 
-    setButtonState({
-      success: false,
-      failed: false,
-      isLoading: true,
-    });
-
-    const errorState = () =>
-      setButtonState({
-        success: false,
-        failed: true,
-        isLoading: false,
-      });
-    const successState = () => {
-      setButtonState({
-        success: true,
-        failed: false,
-        isLoading: false,
-      });
-      setInputs({
-        email: '',
-        subject: '',
-        message: '',
-      });
-      recaptchaRef.current?.reset();
-    };
-
     const token = recaptchaRef?.current?.getValue();
-    if (!token) {
-      return errorState();
-    }
+    await formRequest({ onSuccess, onError, inputs, token });
 
-    let response;
-    try {
-      response = await axios.post('https://formbold.com/s/oaPkK', {
-        ...inputs,
-        'g-recaptcha-response': token,
-      });
-    } catch (error) {
-      return errorState();
-    }
-
-    if (response?.status === 201) {
-      successState();
-    } else {
-      return errorState();
-    }
+    setIsLoading(false);
   };
 
   return (
@@ -126,11 +102,7 @@ export function ContactForm() {
           />
         </Box>
         <Box sx={{ marginBottom: 3 }}>
-          <SubmitButton
-            success={buttonState.success}
-            failed={buttonState.failed}
-            isLoading={buttonState.isLoading}
-          />
+          <SubmitButton isLoading={isLoading} state={buttonState} />
         </Box>
       </Flex>
     </form>

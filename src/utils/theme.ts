@@ -253,6 +253,7 @@ export const theme = {
         backgroundColor: 'rgb(0, 0, 0, 0.5)',
         outline: 'unset',
         boxShadow: `0px 0px 2px 4px ${baseTheme.colors.darkenPrimary}`,
+        color: '#F5F5F5',
       },
       borderColor: 'transparent',
     },
@@ -354,7 +355,6 @@ export const theme = {
         color: '#FFFFFF',
       },
       '&:focus, :focus-visible': {
-        color: baseTheme.colors.lightenSecondary,
         outline: 'none',
       },
     },

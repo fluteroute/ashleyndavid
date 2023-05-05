@@ -3,8 +3,34 @@ import { Grid, Flex, Iframe, Image, Link, IconButton } from '../../components/ba
 import { faAddressCard, faClipboardList, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { NavigationLink, Paragraph, FLToWA } from '../../components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { ThemeUIStyleObject } from 'theme-ui';
 
 export function Home() {
+  const imageSx: ThemeUIStyleObject = {
+    boxShadow: 'unset',
+    width: '250px',
+    height: '250px',
+    objectFit: 'cover',
+    borderRadius: '20px',
+  };
+  const navigationLinkSx = {
+    marginTop: 2,
+    '&:hover': {
+      color: 'primary',
+    },
+    '&:focus, :focus-visible': {
+      color: 'darkenPrimary',
+      outline: 'none',
+    },
+  };
+  const iconButtonSx = {
+    marginTop: 2,
+    marginLeft: 1,
+    fontSize: '2em',
+    height: '2.5em',
+    width: '2.5em',
+  };
+
   return (
     <>
       <Paragraph>
@@ -67,39 +93,9 @@ export function Home() {
           marginBottom: 2,
         }}
       >
-        <Image
-          alt="Ninja, an orange munchkin cat"
-          src="ninjaonbed.jpeg"
-          sx={{
-            boxShadow: 'unset',
-            width: '250px',
-            height: '250px',
-            objectFit: 'cover',
-            borderRadius: '20px',
-          }}
-        />
-        <Image
-          alt="Hiking in Pedernales Falls State Park"
-          src="texashike.jpeg"
-          sx={{
-            boxShadow: 'unset',
-            width: '250px',
-            height: '250px',
-            objectFit: 'cover',
-            borderRadius: '20px',
-          }}
-        />
-        <Image
-          alt="Holiday Phontonic's Light Show"
-          src="christmaslights.jpeg"
-          sx={{
-            boxShadow: 'unset',
-            width: '250px',
-            height: '250px',
-            objectFit: 'cover',
-            borderRadius: '20px',
-          }}
-        />
+        <Image alt="Ninja, an orange munchkin cat" src="ninjaonbed.jpeg" sx={imageSx} />
+        <Image alt="Hiking in Pedernales Falls State Park" src="texashike.jpeg" sx={imageSx} />
+        <Image alt="Holiday Phontonic's Light Show" src="christmaslights.jpeg" sx={imageSx} />
       </Grid>
       <Paragraph>
         {
@@ -126,17 +122,12 @@ export function Home() {
               // eslint-disable-next-line @typescript-eslint/ban-ts-comment
               // @ts-ignore
               to="/about"
-              sx={{
-                marginLeft: 1,
-                fontSize: '2em',
-                height: '2.5em',
-                width: '2.5em',
-              }}
+              sx={iconButtonSx}
               variant="transparent"
             >
               <FontAwesomeIcon icon={faAddressCard} size="xl" />
             </IconButton>
-            <NavigationLink sx={{ marginTop: 2 }} to="/about" variant="nav">
+            <NavigationLink sx={navigationLinkSx} to="/about" variant="nav">
               About
             </NavigationLink>
           </Flex>
@@ -153,17 +144,12 @@ export function Home() {
               // eslint-disable-next-line @typescript-eslint/ban-ts-comment
               // @ts-ignore
               to="/career"
-              sx={{
-                marginLeft: 1,
-                fontSize: '2em',
-                height: '2.5em',
-                width: '2.5em',
-              }}
+              sx={iconButtonSx}
               variant="transparent"
             >
               <FontAwesomeIcon icon={faClipboardList} size="xl" />
             </IconButton>
-            <NavigationLink sx={{ marginTop: 2 }} to="/career" variant="nav">
+            <NavigationLink sx={navigationLinkSx} to="/career" variant="nav">
               Career
             </NavigationLink>
           </Flex>
@@ -180,17 +166,12 @@ export function Home() {
               // eslint-disable-next-line @typescript-eslint/ban-ts-comment
               // @ts-ignore
               to="/contact"
-              sx={{
-                marginLeft: 1,
-                fontSize: '2em',
-                height: '2.5em',
-                width: '2.5em',
-              }}
+              sx={iconButtonSx}
               variant="transparent"
             >
               <FontAwesomeIcon icon={faEnvelope} size="xl" />
             </IconButton>
-            <NavigationLink sx={{ marginTop: 2 }} to="/contact" variant="nav">
+            <NavigationLink sx={navigationLinkSx} to="/contact" variant="nav">
               Contact
             </NavigationLink>
           </Flex>
