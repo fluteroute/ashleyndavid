@@ -1,27 +1,24 @@
 import React from 'react';
 import { render, screen } from '../../utils/setupTests';
-import { SubmitButton } from './';
+import { SubmitButton, SubmitButtonStates } from './';
 
-test('[components] SubmitButton: should render in default state', () => {
-  render(<SubmitButton success={false} failed={false} isLoading={false} />);
+const expectedButtonMessage: { [key in SubmitButtonStates]: string } = {
+  [SubmitButtonStates.Loading]: 'Loading',
+  [SubmitButtonStates.Success]: 'Success!',
+  [SubmitButtonStates.Failed]: 'Try again!',
+  [SubmitButtonStates.Default]: 'Send Message',
+};
 
-  expect(screen.getByText('Send Message')).toBeDefined();
-});
+test.each(Object.values(SubmitButtonStates))(
+  '[components] SubmitButton: should render in %s state',
+  (state) => {
+    render(<SubmitButton state={state} />);
 
-test('[components] SubmitButton: should render in loading state', () => {
-  render(<SubmitButton success={false} failed={false} isLoading={true} />);
+    const expectedText =
+      state === SubmitButtonStates.Loading
+        ? screen.getByLabelText(expectedButtonMessage[state])
+        : screen.getByText(expectedButtonMessage[state]);
 
-  expect(screen.getByLabelText('Loading')).toBeDefined();
-});
-
-test('[components] SubmitButton: should render in success state', () => {
-  render(<SubmitButton success={true} failed={false} isLoading={false} />);
-
-  expect(screen.getByText('Success!')).toBeDefined();
-});
-
-test('[components] SubmitButton: should render in failed state', () => {
-  render(<SubmitButton success={false} failed={true} isLoading={false} />);
-
-  expect(screen.getByText('Try again!')).toBeDefined();
-});
+    expect(expectedText).toBeDefined();
+  }
+);

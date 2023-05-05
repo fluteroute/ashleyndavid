@@ -3,14 +3,51 @@ import { Button, ButtonProps, Spinner } from '../base';
 import { faCheck } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-export type SubmitButtonProps = ButtonProps & {
+export enum SubmitButtonStates {
+  Loading = 'loading',
+  Success = 'success',
+  Failed = 'failed',
+  Default = 'default',
+}
+
+export type SubmitButtonState = {
   success: boolean;
   failed: boolean;
   isLoading: boolean;
 };
 
+export type SubmitButtonProps = ButtonProps & {
+  state: SubmitButtonStates;
+};
+
 export function SubmitButton(props: SubmitButtonProps) {
-  const { success, failed, isLoading, ...other } = props;
+  const { state, ...other } = props;
+
+  const buttonStates: { [key in SubmitButtonStates]: SubmitButtonState } = {
+    [SubmitButtonStates.Loading]: {
+      success: false,
+      failed: false,
+      isLoading: true,
+    },
+    [SubmitButtonStates.Success]: {
+      success: true,
+      failed: false,
+      isLoading: false,
+    },
+    [SubmitButtonStates.Failed]: {
+      success: false,
+      failed: true,
+      isLoading: false,
+    },
+    [SubmitButtonStates.Default]: {
+      success: false,
+      failed: false,
+      isLoading: false,
+    },
+  };
+
+  const { success, failed, isLoading } = buttonStates[state];
+
   return (
     <Button
       disabled={success || undefined}
@@ -24,11 +61,18 @@ export function SubmitButton(props: SubmitButtonProps) {
           '&:hover': {
             backgroundColor: 'success',
           },
+          '&:focus': {
+            backgroundColor: 'success',
+          },
         }),
         ...(failed && {
           backgroundColor: 'error',
+
           '&:hover': {
             backgroundColor: '#BA0E0E',
+          },
+          '&:focus': {
+            backgroundColor: 'error',
           },
         }),
       }}

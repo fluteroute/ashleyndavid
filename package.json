@@ -55,7 +55,7 @@
     "prepare": "husky install",
     "start": "react-scripts start",
     "test:build": "react-scripts build",
-    "test:jest": "react-scripts test",
+    "test:jest": "react-scripts test a",
     "test": "yarn test:build && yarn test:jest",
     "type": "tsc --noEmit"
   },
