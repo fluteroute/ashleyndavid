@@ -355,7 +355,6 @@ export const theme = {
         color: '#FFFFFF',
       },
       '&:focus, :focus-visible': {
-        color: baseTheme.colors.lightenSecondary,
         outline: 'none',
       },
     },

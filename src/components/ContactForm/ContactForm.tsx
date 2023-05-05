@@ -16,6 +16,7 @@ export function ContactForm() {
   const [buttonState, setButtonState] = React.useState<SubmitButtonStates>(
     SubmitButtonStates.Default
   );
+  const [isLoading, setIsLoading] = React.useState(false);
   const [inputs, setInputs] = React.useState<InputsState>({
     email: '',
     subject: '',
@@ -33,25 +34,28 @@ export function ContactForm() {
     }));
   };
 
+  const onError = () => setButtonState(SubmitButtonStates.Failed);
+  const onSuccess = () => {
+    setButtonState(SubmitButtonStates.Success);
+
+    // Reset form
+    setInputs({
+      email: '',
+      subject: '',
+      message: '',
+    });
+    recaptchaRef.current?.reset();
+  };
+
   const handleOnSubmit = async (event: { preventDefault: () => void }) => {
+    setIsLoading(true);
+
     event.preventDefault();
-    setButtonState(SubmitButtonStates.Loading);
-
-    const onError = () => setButtonState(SubmitButtonStates.Failed);
-    const onSuccess = () => {
-      setButtonState(SubmitButtonStates.Success);
-
-      // Reset form
-      setInputs({
-        email: '',
-        subject: '',
-        message: '',
-      });
-      recaptchaRef.current?.reset();
-    };
 
     const token = recaptchaRef?.current?.getValue();
     await formRequest({ onSuccess, onError, inputs, token });
+
+    setIsLoading(false);
   };
 
   return (
@@ -100,7 +104,7 @@ export function ContactForm() {
           />
         </Box>
         <Box sx={{ marginBottom: 3 }}>
-          <SubmitButton state={buttonState} />
+          <SubmitButton isLoading={isLoading} state={buttonState} />
         </Box>
       </Flex>
     </form>

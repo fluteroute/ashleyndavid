@@ -136,7 +136,20 @@ export function Home() {
             >
               <FontAwesomeIcon icon={faAddressCard} size="xl" />
             </IconButton>
-            <NavigationLink sx={{ marginTop: 2 }} to="/about" variant="nav">
+            <NavigationLink
+              sx={{
+                marginTop: 2,
+                '&:hover': {
+                  color: 'primary',
+                },
+                '&:focus, :focus-visible': {
+                  color: 'darkenPrimary',
+                  outline: 'none',
+                },
+              }}
+              to="/about"
+              variant="nav"
+            >
               About
             </NavigationLink>
           </Flex>
@@ -163,7 +176,20 @@ export function Home() {
             >
               <FontAwesomeIcon icon={faClipboardList} size="xl" />
             </IconButton>
-            <NavigationLink sx={{ marginTop: 2 }} to="/career" variant="nav">
+            <NavigationLink
+              sx={{
+                marginTop: 2,
+                '&:hover': {
+                  color: 'primary',
+                },
+                '&:focus, :focus-visible': {
+                  color: 'darkenPrimary',
+                  outline: 'none',
+                },
+              }}
+              to="/career"
+              variant="nav"
+            >
               Career
             </NavigationLink>
           </Flex>
@@ -190,7 +216,20 @@ export function Home() {
             >
               <FontAwesomeIcon icon={faEnvelope} size="xl" />
             </IconButton>
-            <NavigationLink sx={{ marginTop: 2 }} to="/contact" variant="nav">
+            <NavigationLink
+              sx={{
+                marginTop: 2,
+                '&:hover': {
+                  color: 'primary',
+                },
+                '&:focus, :focus-visible': {
+                  color: 'darkenPrimary',
+                  outline: 'none',
+                },
+              }}
+              to="/contact"
+              variant="nav"
+            >
               Contact
             </NavigationLink>
           </Flex>
