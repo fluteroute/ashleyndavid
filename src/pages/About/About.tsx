@@ -56,7 +56,7 @@ export function About() {
           <ListBox style={{ paddingInlineStart: '20px' }}>
             <Grid
               columns={[1, 1, 3, 3]}
-              gap={3}
+              gap={[3, 3, 3, 4]}
               sx={{
                 alignItems: 'start',
                 justifyItems: ['center', 'center', 'center', 'start'],
