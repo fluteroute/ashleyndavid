@@ -6,6 +6,9 @@ wait
 echo
 echo "Run ashleyndavid.com and take snapshots"
 serve -s build -l 3000 &
+PID=$!
+
 yarn percy &&
-  killall node
+  kill -INT $PID
+
 exit 0
