@@ -1,12 +1,10 @@
-
-name: CI
-
-on:
-  pull_request:
-    branches: [ main ]
-
+name: Deploy to Firebase Hosting on merge
+'on':
+  push:
+    branches:
+      - main
 jobs:
-  Test:
+  build_and_deploy:
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -19,25 +17,13 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - name: Install dependencies
         run: yarn install --immutable
-      - name: Run tests
-        run: yarn test
-  Lint:
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [18.x]
-    steps:
-      - uses: actions/checkout@v3
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
+      - run: yarn build
+      - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
-          node-version: ${{ matrix.node-version }}
-      - name: Install dependencies
-        run: yarn install --immutable
-      - name: EsLint
-        run: yarn eslint
-      - name: Check types
-        run: yarn type
+          repoToken: '${{ secrets.GITHUB_TOKEN }}'
+          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_ASHLEYNDAVID }}'
+          channelId: live
+          projectId: ashleyndavid
   Percy:
     runs-on: ubuntu-latest
     strategy:
@@ -55,3 +41,4 @@ jobs:
         run: yarn test:visual
         env:
           PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
+      
