@@ -1,0 +1,16 @@
+- name: Home page
+  url: http://localhost:3000/
+  waitForTimeout: 1000
+  waitForSelector: img[alt="Ashley's Avatar"]
+- name: About page
+  url: http://localhost:3000/about
+  waitForTimeout: 1000
+  waitForSelector: img[alt="Ashley hiking"]
+- name: Career page
+  url: http://localhost:3000/career
+  waitForTimeout: 1000
+  waitForSelector: img[alt="AD Logo"]
+- name: Contact page
+  url: http://localhost:3000/contact
+  waitForTimeout: 1000
+  waitForSelector: img[alt="AD Logo"]

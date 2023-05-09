@@ -1,6 +1,31 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
+echo
+echo " Running pre-commit checks for ashleyndavid."
+echo
+echo "          |\___/|    "
+echo "          )     (    "
+echo "         =\     /=   "
+echo "           )===(     "
+echo "          /     \    "
+echo "          |     |    "
+echo "         /       \   "
+echo "         \       /   "
+echo "          \__  _/    "
+echo "            ( (      "
+echo "             ) )     "
+echo "            (_(      "
+echo
+
+echo "Format via Prettier:"
 npx pretty-quick --staged
+echo
+
+echo "Lint with ESLint:"
 npx lint-staged
+echo
+
+echo "Check types"
 yarn type
+echo
