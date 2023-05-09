@@ -23,6 +23,7 @@
     "uuid": "^9.0.0"
   },
   "devDependencies": {
+    "@percy/cli": "^1.24.0",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^13.0.0",
     "@testing-library/user-event": "^14.0.0",
@@ -52,10 +53,12 @@
     "eject": "react-scripts eject",
     "eslint": "eslint src/**",
     "format": "prettier --write .",
+    "percy": "percy snapshot .percy/snapshots.yml",
     "prepare": "husky install",
     "start": "react-scripts start",
     "test:build": "react-scripts build",
     "test:jest": "react-scripts test a",
+    "test:visual": " /bin/bash .percy/snapshots.sh",
     "test": "yarn test:build && yarn test:jest",
     "type": "tsc --noEmit"
   },
@@ -76,6 +79,16 @@
     "transformIgnorePatterns": [
       "node_modules/(?!axios)/"
     ]
+  },
+  "percy": {
+    "version": 2,
+    "snapshot": {
+      "widths": [
+        375,
+        1792
+      ],
+      "min-height": 1120
+    }
   },
   "browserslist": [
     ">0.2%",
