@@ -1,8 +1,15 @@
 import React from 'react';
 import { Flex, FlexProps, ThemeProvider } from '../../base';
+import ReactGA from 'react-ga';
+import { useLocation } from 'react-router-dom';
 
 export function AppWrapper(props: FlexProps) {
   const { sx, ...other } = props;
+  const location = useLocation();
+
+  React.useEffect(() => {
+    ReactGA.pageview(window.location.pathname);
+  }, [location.pathname]);
 
   return (
     <ThemeProvider>

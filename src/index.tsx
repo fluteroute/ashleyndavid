@@ -3,6 +3,10 @@ import ReactDOM from 'react-dom/client';
 import { About, Career, Contact, Home } from './pages';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { App, Error } from './components/App';
+import ReactGA from 'react-ga';
+
+const TRACKING_ID = 'G-4N79BHVQ6N';
+ReactGA.initialize(TRACKING_ID);
 
 export const routes = [
   {
