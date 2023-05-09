@@ -6,8 +6,17 @@ name: Deploy to Firebase Hosting on merge
 jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [18.x]
     steps:
       - uses: actions/checkout@v3
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Install dependencies
+        run: yarn install --immutable
       - run: yarn build
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
