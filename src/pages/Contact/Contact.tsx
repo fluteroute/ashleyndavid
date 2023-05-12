@@ -23,7 +23,7 @@ export function Contact() {
             marginLeft: 3,
           }}
         >
-          <Box sx={{ marginBottom: '1em' }}>
+          <Box as="p" sx={{ marginBottom: '1em' }}>
             <Typography variant="body1">
               {"If you're interested in connecting with me professionally, you can find me on " +
                 "LinkedIn. Feel free to send a connection request or drop me a message. I'm always "}
@@ -42,6 +42,7 @@ export function Contact() {
             <IconButton
               aria-label="LinkedIn"
               as="a"
+              // Button props does not have href
               // eslint-disable-next-line @typescript-eslint/ban-ts-comment
               // @ts-ignore
               href="https://www.linkedin.com/in/ashleydavid/"
@@ -59,6 +60,7 @@ export function Contact() {
             <IconButton
               aria-label="GitHub"
               as="a"
+              // Button props does not have href
               // eslint-disable-next-line @typescript-eslint/ban-ts-comment
               // @ts-ignore
               href="https://github.com/fluteroute"
