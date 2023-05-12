@@ -32,6 +32,7 @@ export function ContentCard(props: ContentCardProps) {
         }}
       >
         <Flex
+          as="header"
           sx={{
             flexDirection: 'row',
             alignItems: 'center',
@@ -39,7 +40,7 @@ export function ContentCard(props: ContentCardProps) {
           }}
         >
           <Box>
-            <Typography variant="h1" sx={{ fontSize: [44, 44, 44, 64] }}>
+            <Typography as="h1" variant="h1" sx={{ fontSize: [44, 44, 44, 64] }}>
               {title}
             </Typography>
           </Box>
@@ -47,6 +48,7 @@ export function ContentCard(props: ContentCardProps) {
         </Flex>
         <Divider />
         <Box
+          as="main"
           className="content"
           sx={{
             height: ['100%', '100%', '100%', '58vh'],

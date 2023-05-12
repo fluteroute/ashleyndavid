@@ -49,9 +49,11 @@ export function Career() {
   return (
     <>
       <Box sx={{ marginTop: '1em', marginBottom: '1em' }}>
-        <Typography variant="h2">Technologies</Typography>
+        <Typography as="h2" variant="h2">
+          Technologies
+        </Typography>
       </Box>
-      <Box sx={{ marginTop: '1em', marginBottom: '1em' }}>
+      <Box as="section" sx={{ marginTop: '1em', marginBottom: '1em' }}>
         <ListBox>
           {technologies.map(({ tech, values }, index) => (
             <TechnologyListBoxItem key={`${tech.toLowerCase()}-${index}`} tech={tech}>
@@ -61,7 +63,9 @@ export function Career() {
         </ListBox>
       </Box>
       <Box sx={{ marginTop: '1em', marginBottom: '1em' }}>
-        <Typography variant="h2">Experience</Typography>
+        <Typography as="h2" variant="h2">
+          Experience
+        </Typography>
       </Box>
       <CareerExperience
         company="project44"

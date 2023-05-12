@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 export function Footer() {
   return (
     <Flex
+      as="footer"
       sx={{
         flexDirection: ['column-reverse', 'column-reverse', 'column-reverse', 'row'],
         alignSelf: 'center',

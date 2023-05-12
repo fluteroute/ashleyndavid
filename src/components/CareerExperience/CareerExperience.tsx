@@ -11,7 +11,7 @@ export type CareerExperienceProps = {
 export function CareerExperience(props: CareerExperienceProps) {
   const { children, company, dateRange, jobTitle } = props;
   return (
-    <>
+    <section>
       <Box sx={{ marginTop: '1em', marginBottom: '1em' }}>
         <Flex
           sx={{
@@ -21,20 +21,26 @@ export function CareerExperience(props: CareerExperienceProps) {
           }}
         >
           <Box>
-            <Typography variant="h3">{company}</Typography>
+            <Typography as="h3" variant="h3">
+              {company}
+            </Typography>
           </Box>
           <Box>
-            <Typography variant="h3">{dateRange}</Typography>
+            <Typography as="h3" variant="h3">
+              {dateRange}
+            </Typography>
           </Box>
         </Flex>
       </Box>
       <Box sx={{ marginTop: '1em', marginBottom: '1em' }}>
-        <Typography variant="h4">{jobTitle}</Typography>
+        <Typography as="h4" variant="h4">
+          {jobTitle}
+        </Typography>
       </Box>
       <Box sx={{ marginTop: '1em', marginBottom: '1em' }}>
         <Typography variant="body2">{children}</Typography>
       </Box>
-    </>
+    </section>
   );
 }
 

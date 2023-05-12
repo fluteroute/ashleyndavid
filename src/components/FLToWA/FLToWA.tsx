@@ -7,6 +7,7 @@ import { Florida, Washington } from './';
 export function FLToWA() {
   return (
     <Flex
+      as="figure"
       sx={{
         flexDirection: 'column',
         alignItems: 'center',
@@ -30,7 +31,11 @@ export function FLToWA() {
           }}
         >
           <Florida />
-          <Typography variant="label" sx={{ marginTop: 3, marginBottom: [3, 3, 0, 0] }}>
+          <Typography
+            as="figcaption"
+            variant="label"
+            sx={{ marginTop: 3, marginBottom: [3, 3, 0, 0] }}
+          >
             <FontAwesomeIcon icon={faLocationDot} style={{ marginRight: '8px' }} />
             Tampa, FL
           </Typography>
@@ -54,7 +59,7 @@ export function FLToWA() {
           }}
         >
           <Washington />
-          <Typography variant="label" sx={{ marginTop: 3 }}>
+          <Typography as="figcaption" variant="label" sx={{ marginTop: 3 }}>
             <FontAwesomeIcon icon={faLocationPin} style={{ marginRight: '8px' }} />
             Seattle, WA
           </Typography>

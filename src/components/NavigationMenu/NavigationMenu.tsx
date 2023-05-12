@@ -14,6 +14,7 @@ export function NavigationMenu() {
 
   return (
     <Box
+      as="nav"
       sx={{
         paddingRight: 2,
         paddingLeft: 2,
