@@ -68,8 +68,18 @@ export function Career() {
         </Typography>
       </Box>
       <CareerExperience
+        company="Finvari"
+        dateRange="Starting Aug. 2023"
+        jobTitle="Staff Software Engineer"
+      >
+        Finvari is a revolutionary corporate card and expense management system built specifically
+        for the construction industry. With its innovative approach, Finvari aims to transform how
+        construction companies handle their financial processes, streamlining expenses, and
+        providing enhanced control and visibility.
+      </CareerExperience>
+      <CareerExperience
         company="project44"
-        dateRange="Jan. 2021 - Present"
+        dateRange="Jan. 2021 - June 2023"
         jobTitle="Senior Software Engineer"
       >
         Originally joined the Austin based startup, Convey, which was acquired by project44 in
