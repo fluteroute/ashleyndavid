@@ -36,6 +36,7 @@ export function Layout(props: LayoutProps) {
           top: variant !== 'home' ? ['0em', '1em', '3em', '0em'] : ['0em', '1em', '0em', '0em'],
           left: ['-5em', '-17em', '-19em', '0em'],
           boxShadow: 'none',
+          height: '100%',
           width: [225, 300, 300, 550],
           transform: 'scaleX(-1)',
         }}
