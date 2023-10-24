@@ -32,7 +32,7 @@ export function Avatar(props: AvatarProps) {
               top: ['12em', '12em', '15em', '5em'],
               left: ['none', 'none', 'none', '2em'],
               maxWidth: [220, 280, 280, 554],
-              minWidth: ['unset', 'unset', 280, 448],
+              minWidth: ['unset', 'unset', 280, 500],
             }),
       }}
     >
@@ -75,10 +75,10 @@ export function Avatar(props: AvatarProps) {
                   position: 'relative',
                   bottom: ['5em', '5em', '5em', '11em'],
                   left: ['5em', '5em', '5em', '10em'],
-                  maxWidth: [120, 180, 180, 260],
+                  maxWidth: [120, 180, 180, 270],
                   zIndex: 1,
-                  borderBottomLeftRadius: [86, 122],
-                  borderBottomRightRadius: [86, 122],
+                  borderBottomLeftRadius: [86, 128],
+                  borderBottomRightRadius: [86, 128],
                   flexGrow: 20,
                   transition: 'all 1s',
                 }),

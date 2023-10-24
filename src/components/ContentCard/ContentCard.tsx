@@ -39,7 +39,7 @@ export function ContentCard(props: ContentCardProps) {
         }}
       >
         <Box>
-          <Typography as="h1" variant="h1" sx={{ fontSize: [44, 44, 44, 76] }}>
+          <Typography as="h1" variant="h1" sx={{ fontSize: [44, 44, 44, 86] }}>
             {title}
           </Typography>
         </Box>

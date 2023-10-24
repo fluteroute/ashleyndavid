@@ -31,13 +31,13 @@ export function Layout(props: LayoutProps) {
         alt="Arch"
         src="arch.svg"
         sx={{
-          position: ['relative', 'relative', 'relative', 'absolute'],
+          position: ['relative', 'relative', 'relative', 'fixed'],
           zIndex: 0,
-          top: variant !== 'home' ? ['0em', '1em', '3em', '0em'] : ['0em', '1em', '0em', '0em'],
-          left: ['-5em', '-17em', '-19em', '0em'],
+          top: ['1em', '1em', '1em', '0em'],
+          left: ['-7em', '-12em', '-20em', '0em'],
           boxShadow: 'none',
           height: '100%',
-          width: [225, 300, 300, 550],
+          width: [225, 300, 350, 550],
           transform: 'scaleX(-1)',
         }}
       />
@@ -55,9 +55,9 @@ export function Layout(props: LayoutProps) {
             marginRight: [0, 0, 0, '20px'],
             paddingRight: '20px',
             marginTop: [
-              variant !== 'home' ? -410 : -452,
-              variant !== 'home' ? -418 : -545,
-              -548,
+              variant !== 'home' ? -386 : -434,
+              variant !== 'home' ? -414 : -550,
+              -520,
               0,
             ],
             height: ['100%', '100%', '100%', 'unset'],
