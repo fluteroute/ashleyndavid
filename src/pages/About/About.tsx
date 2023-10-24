@@ -75,12 +75,13 @@ export function About() {
               }}
             >
               <ListBoxItem>
-                Flute: As a devoted flutist, I volunteer with the{' '}
+                Flute: While living in Florida, I volunteered with the{' '}
                 <Link href="http://www.nathanmuehl.com/spcbands/ws.html" target="_blank">
                   Wind Symphony of St. Petersburg College
                 </Link>
-                , embracing opportunities to perform in small ensembles such as flute choirs and
-                other wind groups.
+                . I embrace opportunities to perform in small ensembles such as flute choirs and
+                other wind groups. {"I'm"} always looking for opportunities to play in the Seattle
+                area.
               </ListBoxItem>
               <Image
                 alt="Ashley playing flute"
@@ -95,10 +96,6 @@ export function About() {
                 Hiking: My love for the outdoors has led me to explore numerous national and state
                 parks, including Yosemite, Olympic, Mt. Rainier, North Cascades, and the Great Smoky
                 Mountains.
-                {
-                  " To further fuel this passion, I'm excited to be relocating to the Pacific Northwest "
-                }
-                from Florida.
               </ListBoxItem>
               <Image
                 alt="kayaking"

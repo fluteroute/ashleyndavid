@@ -69,7 +69,7 @@ export function Career() {
       </Box>
       <CareerExperience
         company="Finvari"
-        dateRange="Starting Aug. 2023"
+        dateRange="Aug. 2023 - Present"
         jobTitle="Staff Software Engineer"
       >
         Finvari is a revolutionary corporate card and expense management system built specifically
@@ -83,10 +83,10 @@ export function Career() {
         jobTitle="Senior Software Engineer"
       >
         Originally joined the Austin based startup, Convey, which was acquired by project44 in
-        October 2021. Former Convey teams are now known as Last Mile within project44, as they focus
-        on shipments from retailers to end consumers. Developed B2B and B2C solutions with unique
-        design languages for shipments. Key projects include Dolly, a design system for all Last
-        Mile applications; Shipments Portal, a web app for managing shipments and tracking
+        September 2021. Former Convey teams are now known as Last Mile within project44, as they
+        focus on shipments from retailers to end consumers. Developed B2B and B2C solutions with
+        unique design languages for shipments. Key projects include Dolly, a design system for all
+        Last Mile applications; Shipments Portal, a web app for managing shipments and tracking
         configurations; and Tracking Page 2.0, a configurable solution for retailers. Also automated
         visual regression workflows, created and maintained API endpoints, contributed to
         {" project44's front-end guild, and implemented visual component tests in the open-source "}
@@ -143,6 +143,7 @@ export function Career() {
         <ListBox>
           <ListBoxItem
             style={{
+              color: '#F5F5F5',
               fontSize: '16px',
               paddingTop: '4px',
               paddingBottom: '4px',
@@ -152,6 +153,7 @@ export function Career() {
           </ListBoxItem>
           <ListBoxItem
             style={{
+              color: '#F5F5F5',
               fontSize: '16px',
               paddingTop: '4px',
               paddingBottom: '4px',

@@ -49,7 +49,7 @@ export const NavigationMenuItem = React.forwardRef<HTMLLIElement, NavigationMenu
             width: '100%',
             paddingRight: '24px',
             paddingLeft: '24px',
-            fontFamily: 'Source Code Pro, Arial',
+            fontFamily: 'Glory, Source Code Pro, Arial',
             fontSize: '16px',
             fontStyle: 'normal',
             fontWeight: '600',

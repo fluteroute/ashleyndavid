@@ -1,5 +1,5 @@
 import React from 'react';
-import { Avatar, ContentCard, Footer, NavigationLink } from '../';
+import { Avatar, ContentCard, Footer, Image, NavigationLink } from '../';
 import { Flex } from '../base';
 
 export type LayoutProps = {
@@ -26,34 +26,53 @@ export function Layout(props: LayoutProps) {
 
   const variant = title !== 'Ashley David' ? 'main' : 'home';
   return (
-    <Flex
-      sx={{
-        flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: ['space-between', 'space-between', 'space-between', 'center'],
-      }}
-    >
+    <>
+      <Image
+        alt="Arch"
+        src="arch.svg"
+        sx={{
+          position: ['relative', 'relative', 'relative', 'absolute'],
+          zIndex: 0,
+          top: variant !== 'home' ? ['0em', '1em', '3em', '0em'] : ['0em', '1em', '0em', '0em'],
+          left: ['-5em', '-17em', '-19em', '0em'],
+          boxShadow: 'none',
+          width: [225, 300, 300, 550],
+          transform: 'scaleX(-1)',
+        }}
+      />
       <Flex
         sx={{
-          flexDirection: ['column', 'column', 'column', 'row'],
-          marginLeft: '20px',
-          paddingRight: '20px',
-          marginTop: [variant !== 'home' ? -190 : -215, variant !== 'home' ? -200 : -222, -248, 0],
-          paddingBottom: [0, 0, 0, 80],
-          maxWidth: ['unset', 'unset', 'unset', 1600],
-          height: ['100%', '100%', '100%', 'unset'],
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: ['space-between', 'space-between', 'space-between', 'center'],
         }}
       >
-        <Avatar variant={variant} />
-        <ContentCard
-          description={careerDescription || homeDescription}
-          variant={variant}
-          title={title}
-          {...other}
-        />
+        <Flex
+          sx={{
+            flexDirection: ['column', 'column', 'column', 'row'],
+            marginLeft: ['20px', '20px', '20px', '220px'],
+            marginRight: [0, 0, 0, '20px'],
+            paddingRight: '20px',
+            marginTop: [
+              variant !== 'home' ? -410 : -452,
+              variant !== 'home' ? -418 : -545,
+              -548,
+              0,
+            ],
+            height: ['100%', '100%', '100%', 'unset'],
+          }}
+        >
+          <Avatar variant={variant} />
+          <ContentCard
+            description={careerDescription || homeDescription}
+            variant={variant}
+            title={title}
+            {...other}
+          />
+        </Flex>
+        <Footer />
       </Flex>
-      <Footer />
-    </Flex>
+    </>
   );
 }
 

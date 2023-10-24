@@ -19,10 +19,10 @@ export function Footer() {
         margin: [3, 3, 3, 1],
       }}
     >
-      <Box>
+      <Box sx={{ zIndex: 1 }}>
         <Typography variant="cc">© 2023 Ashley David. All rights reserved.</Typography>
       </Box>
-      <Flex sx={{ flexDirection: 'row' }}>
+      <Flex sx={{ flexDirection: 'row', zIndex: 1 }}>
         <IconButton
           aria-label="LinkedIn"
           as="a"

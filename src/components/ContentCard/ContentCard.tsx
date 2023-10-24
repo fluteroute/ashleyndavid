@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Card, Divider, Flex, Typography } from '../base';
+import { Box, Divider, Flex, Typography } from '../base';
 import { NavigationMenu } from '../';
 import { useLocation } from 'react-router-dom';
 
@@ -24,55 +24,53 @@ export function ContentCard(props: ContentCardProps) {
   }, [pathname]);
 
   return (
-    <Card>
-      <Box
+    <Box
+      sx={{
+        marginLeft: [0, 0, 0, variant !== 'home' ? 180 : 128],
+        marginTop: [variant !== 'home' ? 132 : 160, 160, 160, 0],
+      }}
+    >
+      <Flex
+        as="header"
         sx={{
-          marginLeft: [0, 0, 0, variant !== 'home' ? 180 : 128],
-          marginTop: [variant !== 'home' ? 132 : 160, 160, 160, 0],
+          flexDirection: 'row',
+          alignItems: 'center',
+          justifyContent: 'space-between',
         }}
       >
-        <Flex
-          as="header"
-          sx={{
-            flexDirection: 'row',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-          }}
-        >
-          <Box>
-            <Typography as="h1" variant="h1" sx={{ fontSize: [44, 44, 44, 64] }}>
-              {title}
-            </Typography>
-          </Box>
-          <NavigationMenu />
-        </Flex>
-        <Divider />
-        <Box
-          as="main"
-          className="content"
-          sx={{
-            height: ['100%', '100%', '100%', '58vh'],
-            overflowY: 'scroll',
-            paddingRight: 3,
-          }}
-          {...other}
-        >
-          <Box>
-            <Typography
-              variant="body2"
-              sx={{
-                fontStyle: 'italic',
-                fontSize: ['12px', 'inherit'],
-                lineHeight: ['12px', 'inherit'],
-              }}
-            >
-              {description}
-            </Typography>
-          </Box>
-          {children}
+        <Box>
+          <Typography as="h1" variant="h1" sx={{ fontSize: [44, 44, 44, 76] }}>
+            {title}
+          </Typography>
         </Box>
+        <NavigationMenu />
+      </Flex>
+      <Divider />
+      <Box
+        as="main"
+        className="content"
+        sx={{
+          height: ['100%', '100%', '100%', '70vh'],
+          overflowY: 'scroll',
+          paddingRight: 3,
+        }}
+        {...other}
+      >
+        <Box>
+          <Typography
+            variant="body2"
+            sx={{
+              fontStyle: 'italic',
+              fontSize: ['12px', 'inherit'],
+              lineHeight: ['12px', 'inherit'],
+            }}
+          >
+            {description}
+          </Typography>
+        </Box>
+        {children}
       </Box>
-    </Card>
+    </Box>
   );
 }
 

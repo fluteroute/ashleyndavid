@@ -8,11 +8,12 @@ export function AppWrapper(props: FlexProps) {
     <ThemeProvider>
       <Flex
         sx={{
+          backgroundColor: '#412b43',
           backgroundImage: [
-            'linear-gradient(173deg, #1B1F3A 30%, #53354A 73.72%, #91403A 101.44%)',
-            'linear-gradient(173deg, #1B1F3A 30%, #53354A 73.72%, #91403A 101.44%)',
-            'linear-gradient(173deg, #1B1F3A 30%, #53354A 73.72%, #91403A 101.44%)',
-            'linear-gradient(113.91deg, #1B1F3A 34.95%, #53354A 69.17%, #91403A 91.51%)',
+            'linear-gradient(173deg, #412b43 40%, #903749 63.72%, #C63D2F 101.44%)',
+            'linear-gradient(173deg, #412b43 40%, #903749 63.72%, #C63D2F 101.44%)',
+            'linear-gradient(173deg, #412b43 40%, #903749 63.72%, #C63D2F 101.44%)',
+            'none',
           ],
           flexDirection: 'column',
           height: '100vh',

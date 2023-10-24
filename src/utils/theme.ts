@@ -1,19 +1,20 @@
 export const baseTheme = {
   colors: {
-    darkenPrimary: '#E0630F',
-    primary: '#f0690f',
-    lightenPrimary: '#fc802d',
-    darkenSecondary: '#91403A',
-    secondary: '#A64942',
-    lightenSecondary: '#C35850',
-    backgroundSecondary: '#53354A',
+    darkenPrimary: '#1B3B3E',
+    primary: '#255155',
+    lightenPrimary: '#30676C',
+    darkenSecondary: '#582A3B',
+    secondary: '#6e354a',
+    lightenSecondary: '#87415B',
+    backgroundSecondary: '#9e4e35',
     disabled: '#999593',
     success: '#4B994E',
     error: '#CF0E0E',
   },
   typography: {
     h1: {
-      fontFamily: 'Kdam Thmor Pro, Franklin Gothic Medium, Arial Narrow, Arial,sans-serif',
+      fontFamily:
+        'Shrikhand, Kdam Thmor Pro, Franklin Gothic Medium, Arial Narrow, Arial,sans-serif',
       fontSize: '44px',
       fontStyle: 'normal',
       fontWeight: '600',
@@ -22,7 +23,8 @@ export const baseTheme = {
       color: 'textPrimary',
     },
     h2: {
-      fontFamily: 'Kdam Thmor Pro, Franklin Gothic Medium, Arial Narrow, Arial,sans-serif',
+      fontFamily:
+        'Shrikhand, Kdam Thmor Pro, Franklin Gothic Medium, Arial Narrow, Arial,sans-serif',
       fontSize: '38px',
       fontStyle: 'normal',
       fontWeight: '600',
@@ -67,7 +69,7 @@ export const baseTheme = {
       color: 'textPrimary',
     },
     button: {
-      fontFamily: 'Source Code Pro, Arial',
+      fontFamily: 'Glory, Source Code Pro, Arial',
       fontSize: '16px',
       fontStyle: 'normal',
       fontWeight: '600',
@@ -76,7 +78,7 @@ export const baseTheme = {
       color: 'textPrimary',
     },
     label: {
-      fontFamily: 'Source Code Pro, Arial',
+      fontFamily: 'Glory, Source Code Pro, Arial',
       fontSize: '14px',
       fontStyle: 'normal',
       fontWeight: '200',
@@ -85,7 +87,7 @@ export const baseTheme = {
       color: 'textPrimary',
     },
     link: {
-      fontFamily: 'Source Code Pro, Arial',
+      fontFamily: 'Glory, Source Code Pro, Arial',
       fontSize: '18px',
       fontStyle: 'normal',
       fontWeight: '400',
@@ -93,7 +95,7 @@ export const baseTheme = {
       letterSpacing: '1px',
     },
     navLink: {
-      fontFamily: 'Source Code Pro, Arial',
+      fontFamily: 'Glory, Source Code Pro, Arial',
       fontSize: '16px',
       fontStyle: 'normal',
       fontWeight: '600',
@@ -101,7 +103,7 @@ export const baseTheme = {
       letterSpacing: '1px',
     },
     cc: {
-      fontFamily: 'Source Code Pro, Arial',
+      fontFamily: 'Glory, Source Code Pro, Arial',
       fontSize: '11px',
       fontStyle: 'normal',
       fontWeight: '200',
@@ -114,7 +116,7 @@ export const baseTheme = {
 
 export const theme = {
   colors: {
-    backgroundPrimary: '#1B1F3A',
+    backgroundPrimary: '#0F0F0F',
     textPrimary: '#F5F5F5',
     lightenTextPrimary: '#FFFFFF',
     textSecondary: '#D3CFCF',
@@ -362,13 +364,13 @@ export const theme = {
   styles: {
     a: {
       ...baseTheme.typography.link,
-      color: baseTheme.colors.primary,
+      color: '#FFFFFF',
       textDecoration: 'underline',
       '&:hover': {
-        color: baseTheme.colors.lightenPrimary,
+        color: '#F5A818',
       },
       '&:focus, :focus-visible': {
-        color: baseTheme.colors.secondary,
+        color: '#E97B6E',
         outline: 'none',
       },
     },

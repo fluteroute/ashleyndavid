@@ -17,8 +17,8 @@ export function Avatar(props: AvatarProps) {
         transition: 'all 0.5s linear',
         ...(variant !== 'home'
           ? {
-              top: ['8em', '8em', '8em', 'unset'],
-              left: ['none', 'none', 'none', 'unset'],
+              top: ['3em', '3em', '3em', 'unset'],
+              left: ['none', 'none', 'none', '-3em'],
               transform: [
                 'translateY(1px) translateX(1px)',
                 'translateY(1px) translateX(1px)',
@@ -29,8 +29,8 @@ export function Avatar(props: AvatarProps) {
               minWidth: ['unset', 'unset', 280, 280],
             }
           : {
-              top: ['15em', '15em', '17em', '5em'],
-              left: ['none', 'none', 'none', '6em'],
+              top: ['12em', '12em', '15em', '5em'],
+              left: ['none', 'none', 'none', '2em'],
               maxWidth: [220, 280, 280, 554],
               minWidth: ['unset', 'unset', 280, 448],
             }),
@@ -46,7 +46,7 @@ export function Avatar(props: AvatarProps) {
           alt="Ashley's Avatar"
           src="avatar.jpeg"
           sx={{
-            borderRadius: 400,
+            borderRadius: 80,
             flexBasis: 'auto',
             transition: 'all 0.5s linear',
             ...(variant !== 'home'
@@ -76,7 +76,7 @@ export function Avatar(props: AvatarProps) {
                   bottom: ['5em', '5em', '5em', '11em'],
                   left: ['5em', '5em', '5em', '10em'],
                   maxWidth: [120, 180, 180, 260],
-                  zIndex: 0,
+                  zIndex: 1,
                   borderBottomLeftRadius: [86, 122],
                   borderBottomRightRadius: [86, 122],
                   flexGrow: 20,

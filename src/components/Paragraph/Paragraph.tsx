@@ -4,7 +4,7 @@ import { Box, Typography, TypographyProps } from '../base';
 export function Paragraph(props: TypographyProps) {
   return (
     <Box as="p" sx={{ marginTop: '1em', marginBottom: '1em' }}>
-      <Typography variant="body1" {...props} />
+      <Typography color="textPrimary" variant="body1" {...props} />
     </Box>
   );
 }
