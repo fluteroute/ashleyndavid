@@ -35,16 +35,16 @@ export function Home() {
     <>
       <Paragraph>
         A software engineer with a passion for building innovative design systems, web applications,
-        and automated test frameworks. Currently based in Tampa, FL, Ashley is excited to embark on
-        a new journey by relocating to Seattle, WA. With vast experience in front end development,
-        combined with Scrum Master expertise, Ashley has contributed to the success of
-        high-performance teams, as well as working at dynamic startups.
+        and automated test frameworks. Previously based in Tampa, FL, she now calls Seattle, WA, her
+        home. With vast experience in front end development, combined with Scrum Master expertise,
+        Ashley has contributed to the success of high-performance teams, as well as working at
+        dynamic startups.
       </Paragraph>
       <FLToWA />
       <Paragraph>
         As a driven professional, Ashley is focused on career growth in full stack development and
         leadership, always striving to make a meaningful impact in the tech industry. Outside of her
-        professional life, Ashley is an avid music enthusiast, playing piccolo and flute with the{' '}
+        professional life, Ashley is an avid music enthusiast, performing piccolo and flute with the{' '}
         <Link href="http://www.nathanmuehl.com/spcbands/ws.html" target="_blank">
           Wind Symphony of St. Petersburg College
         </Link>
@@ -81,7 +81,7 @@ export function Home() {
         At home, Ashley shares a special bond with Ninja, a beloved munchkin cat who adds joy and
         comfort to daily life. With a blend of technical prowess, leadership skills, and diverse
         hobbies, Ashley is a well-rounded individual, ready to take on new challenges and make a
-        difference in the world of technology as the next chapter unfolds in Pacific Northwest.
+        difference in the world of technology as the next chapter unfolds in the Pacific Northwest.
       </Paragraph>
       <Grid
         gap={2}

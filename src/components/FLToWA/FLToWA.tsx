@@ -49,7 +49,7 @@ export function FLToWA() {
             },
           }}
         >
-          <FontAwesomeIcon icon={faArrowRightLong} size="2xl" />
+          <FontAwesomeIcon color="#FFFFFF" icon={faArrowRightLong} size="2xl" />
         </Box>
         <Flex
           sx={{

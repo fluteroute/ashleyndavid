@@ -7,11 +7,16 @@ export function TechnologyListBoxItem(props: TechnologyListBoxItemProps) {
   const { children, tech, ...other } = props;
 
   return (
-    <ListBoxItem style={{ paddingTop: '4px', paddingBottom: '4px', fontSize: '16px' }} {...other}>
-      <Typography variant="body1" sx={{ fontWeight: 800, fontSize: '18px' }}>
+    <ListBoxItem
+      style={{ color: '#F5F5F5', paddingTop: '4px', paddingBottom: '4px', fontSize: '16px' }}
+      {...other}
+    >
+      <Typography color="textPrimary" variant="body1" sx={{ fontWeight: 800, fontSize: '18px' }}>
         {`${tech}:`}
       </Typography>{' '}
-      {children}
+      <Typography color="textPrimary" variant="body1">
+        {children}
+      </Typography>
     </ListBoxItem>
   );
 }
